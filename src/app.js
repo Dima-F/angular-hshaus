@@ -7,8 +7,8 @@ hshaus.config(['$locationProvider', '$routeProvider',
       $locationProvider.hashPrefix('!');
 
       $routeProvider.
-        when('/', {
-          template: '<h1>First template</h1>'
+        when('/company', {
+          template: '<company-reg></company-reg>'
         }).
         when('/phones', {
           template: '<phone-list></phone-list>'
@@ -19,6 +19,7 @@ hshaus.config(['$locationProvider', '$routeProvider',
         otherwise('/');
     }
   ]);
-  
+
   hshaus.component('phoneList',require("./phone-list"));
-  hshaus.component('errorView',require("./error"));
+  //hshaus.component('errorView',require("./error"));
+  //hshaus.component('companyReg',require("./company"));

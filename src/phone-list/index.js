@@ -1,5 +1,5 @@
 module.exports =  {
-    templateUrl:'./src/phone-list/template.html',
+    templateUrl:'../src/phone-list/template.html',
     controller: function PhoneListController() {
       this.phones = [
         {
