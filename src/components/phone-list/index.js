@@ -1,5 +1,5 @@
 module.exports =  {
-    templateUrl:'../src/phone-list/template.html',
+    template:require('./template.html'),
     controller: function PhoneListController() {
       this.phones = [
         {
@@ -14,4 +14,4 @@ module.exports =  {
         }
       ];
     }
-}
+};
