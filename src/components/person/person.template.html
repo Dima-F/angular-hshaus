@@ -1,0 +1,60 @@
+<div class="form-row applicant-wrap">
+    <h3>{{$ctrl.getHeader()}}</h3>
+    <div class="input-wrap checkbox-wrap">
+        <div><h4>Person also can be...</h4></div>
+        <div class="radiobutton-item clearfix">
+            <input ng-model="$ctrl.isDirector" type="checkbox" id="applicant-checkbox-1">
+            <label for="applicant-checkbox-1"><h4>Director</h4></label>
+        </div>
+        <div class="radiobutton-item clearfix">
+            <input ng-model="$ctrl.isShareholder" type="checkbox" id="applicant-checkbox-2">
+            <label for="applicant-checkbox-2"><h4>Shareholder</h4></label>
+        </div>
+        <div class="radiobutton-item clearfix">
+            <input ng-model="$ctrl.isBeneficial" type="checkbox" id="applicant-checkbox-3" >
+            <label for="applicant-checkbox-3"><h4>Beneficial owner</h4></label>
+        </div>
+    </div>
+    <div class="input-wrap">
+        <label for="applicantName"><h4>Name</h4></label>
+        <input ng-model="$ctrl.fullName" type="text" name="applicantName" id="check" placeholder="Name Surname" required>
+    </div>
+    <div class="input-wrap">
+        <label for="applicantTaxResidency"><h4>Tax residency</h4></label>
+        <input type="text" name="applicantTaxResidency" list="countrylist"  ng-model="$ctrl.taxResidency" placeholder="Type country...">
+        <ngcountries></ngcountries>
+    </div>
+    <div class="input-wrap residental-address">
+        <label for="applicantResidentialAddress"><h4>Residential address</h4></label>
+        <input ng-model="$ctrl.residentalAddress" type="text" name="applicantResidentialAddress" placeholder="Residential address">
+    </div>
+    <div class="input-wrap" ng-show="$ctrl.isShareholder">
+        <label for="applicantNumberOfShares"><h4>Number or % of shares</h4></label>
+        <input ng-model="$ctrl.numbOfShares" type="text" name="applicantNumberOfShares" placeholder="Number or % of shares">
+    </div>
+    <div class="input-wrap" ng-show="$ctrl.isInCompany()">
+        <label for="applicantDOB"><h4>D.O.B.</h4></label>
+        <input ng-model="$ctrl.dob" type="text" name="applicantDOB" id="applicantDOB" placeholder="Date of birth">
+    </div>
+    <div class="input-wrap">
+        <label for="applicantPostcode"><h4>Postcode</h4></label>
+        <input ng-model="$ctrl.postCode" type="text" name="applicantPostcode" placeholder="Postcode">
+    </div>
+    <div class="input-wrap">
+        <label for="applicantCity"><h4>City</h4></label>
+        <input ng-model="$ctrl.city" type="text" name="applicantCity" placeholder="City">
+    </div>
+    <div class="input-wrap">
+        <label for="applicantCountry"><h4>Country</h4></label>
+        <input type="text" name="applicantCountry" list="countrylist"  ng-model="$ctrl.country" placeholder="Type country...">
+        <ngcountries></ngcountries>
+    </div>
+    <div class="input-wrap">
+        <label for="applicantEmail"><h4>E-mail</h4></label>
+        <input ng-model="$ctrl.email" type="email" name="applicantEmail" placeholder="E-mail" required>
+    </div>
+    <div class="input-wrap">
+        <label for="applicantTelephone"><h4>Telephone</h4></label>
+        <input ng-model="$ctrl.phone" type="tel" name="applicantTelephone" id="telephone" placeholder="Telephone" required>
+    </div>
+</div>

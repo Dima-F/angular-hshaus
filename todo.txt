@@ -1,0 +1,2 @@
+1. dynamic adding person components
+2. angular date datepicker

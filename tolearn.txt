@@ -1,0 +1,1 @@
+http://blog.krawaller.se/posts/dissecting-bindings-in-angularjs/

@@ -14,11 +14,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../src/css/company_registration.css">
 </head>
 <body>
     <div ng-app="hshaus">
-        <company-reg></company-reg>
+        <div class="content-company-registration clearfix">
+            <form action="" method="post" name="companyRegistration">
+                <services></services>
+                <person mainPost="applicant"></person>
+                <company></company>
+                <question></question>
+                <modal></modal>
+                <div class="submit">Submit</div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

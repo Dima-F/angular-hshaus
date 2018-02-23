@@ -1,250 +1,38 @@
-<div class="content-company-registration clearfix">
-            <form action="" method="post" name="companyRegistration">
-                <div class="form-row services-wrap">
-                    <h3>SERVICES</h3>
-                    <div class="services-radiobutton-list">
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="srl-option-1" name="services[]" value="fCompanyRegistrationInEstonia" checked="TRUE">
-                            <label for="srl-option-1"><h4>Company registration in Estonia</h4></label>
-                        </div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="srl-option-2" name="services[]" value="fLegalAddressServer">
-                            <label for="srl-option-2"><h4>Legal address service</h4></label>
-                        </div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="srl-option-3" name="services[]" value="fAuthorisedContactPersonServices">
-                            <label for="srl-option-3"><h4>Authorised contact person services</h4></label>
-                        </div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="srl-option-4" name="services[]" value="fAccountingServices">
-                            <label for="srl-option-4"><h4>Accounting services</h4></label>
-                        </div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="srl-option-5" name="services[]" value="fBankAccountOpening">
-                            <label for="srl-option-5"><h4>Bank account opening</h4></label>
-                        </div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="srl-option-6" name="services[]" value="fVATRegistration">
-                            <label for="srl-option-6"><h4>VAT registration</h4></label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row applicant-wrap">
-                    <h3>APPLICANT</h3>
-                    <div class="input-wrap checkbox-wrap">
-                        <div><h4>Person also can be...</h4></div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="applicant-checkbox-1" name="applicantPersons[]" value="director">
-                            <label for="applicant-checkbox-1"><h4>Director</h4></label>
-                        </div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="applicant-checkbox-2" name="applicantPersons[]" value="shareholder">
-                            <label for="applicant-checkbox-2"><h4>Shareholder</h4></label>
-                        </div>
-                        <div class="radiobutton-item clearfix">
-                            <input type="checkbox" id="applicant-checkbox-3" name="applicantPersons[]" value="beneficialOwner">
-                            <label for="applicant-checkbox-3"><h4>Beneficial owner</h4></label>
-                        </div>
-                    </div>
-                    <div class="input-wrap">
-                        <label for="applicantName"><h4>Name</h4></label>
-                        <input type="text" name="applicantName" id="check" placeholder="Name Surname" required>
-                    </div>
-                    <div class="input-wrap">
-                        <label for="applicantTaxResidency"><h4>Tax residency</h4></label>
-                        <!--<input type="text" name="applicantTaxResidency" placeholder="Tax residency">-->
-                        <select id="taxResidency" name="applicantTaxResidency"></select>
-                    </div>
-                    <div class="input-wrap residental-address">
-                        <label for="applicantResidentialAddress"><h4>Residential address</h4></label>
-                        <input type="text" name="applicantResidentialAddress" placeholder="Residential address">
-                    </div>
-                    <div class="input-wrap" style="display:none">
-                        <label for="applicantNumberOfShares"><h4>Number or % of shares</h4></label>
-                        <input type="text" name="applicantNumberOfShares" placeholder="Number or % of shares">
-                    </div>
-                    <div class="input-wrap" style="display:none">
-                        <label for="applicantDOB"><h4>D.O.B.</h4></label>
-                        <input type="text" name="applicantDOB" id="applicantDOB" placeholder="Date of birth">
-                    </div>
-                    <div class="input-wrap">
-                        <label for="applicantPostcode"><h4>Postcode</h4></label>
-                        <input type="text" name="applicantPostcode" placeholder="Postcode">
-                    </div>
-                    <div class="input-wrap">
-                        <label for="applicantCity"><h4>City</h4></label>
-                        <input type="text" name="applicantCity" placeholder="City">
-                    </div>
-                    <div class="input-wrap">
-                        <label for="applicantCountry"><h4>Country</h4></label>
-                        <!--<select id="country" name="applicantCountry"></select>-->
-                        <select id="country" name="applicantCountry"></select>
-                        <!--<input type="text" name="applicantCountry" placeholder="Country">-->
-                    </div>
-                    <div class="input-wrap">
-                        <label for="applicantEmail"><h4>E-mail</h4></label>
-                        <input type="email" name="applicantEmail" placeholder="E-mail" required>
-                    </div>
-                    <div class="input-wrap">
-                        <label for="applicantTelephone"><h4>Telephone</h4></label>
-                        <input type="tel" name="applicantTelephone" id="telephone" placeholder="Telephone" required>
-                    </div>
-                </div>
-                <div class="form-row company-wrap">
-                    <h3>COMPANY</h3>
-                    <div class="input-wrap">
-                        <label for="companyNameOpt1"><h4>Option 1 </h4></label>
-                        <input type="text" name="companyNameOpt1" placeholder="Company name" required>
-                    </div>
+<div class="form-row company-wrap">
+    <h3>COMPANY</h3>
+    <div class="input-wrap">
+        <label for="companyNameOpt1"><h4>Option 1 </h4></label>
+        <input ng-model="$ctrl.option1" type="text" name="companyNameOpt1" placeholder="Company name" required>
+    </div>
 
-                    <div class="input-wrap">
-                        <label for="companyNameOpt2"><h4>Option 2</h4></label>
-                        <input type="text" name="companyNameOpt2" placeholder="Company name">
-                    </div>
+    <div class="input-wrap">
+        <label for="companyNameOpt2"><h4>Option 2</h4></label>
+        <input ng-model="$ctrl.option2" type="text" name="companyNameOpt2" placeholder="Company name">
+    </div>
 
-                    <div class="input-wrap">
-                        <label for="companyNameOpt3"><h4>Option 3</h4></label>
-                        <input type="text" name="companyNameOpt3" placeholder="Company name">
-                    </div>
+    <div class="input-wrap">
+        <label for="companyNameOpt3"><h4>Option 3</h4></label>
+        <input ng-model="$ctrl.option3" type="text" name="companyNameOpt3" placeholder="Company name">
+    </div>
 
 
-                    <div class="company-blocks">
-                        <h4>BUSINESS ACTIVITY</h4>
-                        <div class="input-wrap">
-                            <label for="companyPlannedBusinessActivity"><h4>Planned business activity</h4></label>
-                            <input type="text" name="companyPlannedBusinessActivity" placeholder="Planned business activity">
-                        </div>
-                        <div class="input-wrap">
-                            <label for="companyLocationOfOperation"><h4>Location of operation</h4></label>
-                            <input type="text" name="companyLocationOfOperation" placeholder="Location of operation">
-                        </div>
-                        <div class="input-wrap">
-                            <label for="companyBusinessCountryManage"><h4>Country from which business will be managed: </h4></label>
-                            <input type="text" name="companyBusinessCountryManage" placeholder="Country from which business will be managed">
-                        </div>
-                        <div class="input-wrap">
-                            <label for="companyEstimatedAnnualTurnover"><h4>Estimated annual turnover</h4></label>
-                            <input type="text" name="companyEstimatedAnnualTurnover" placeholder="Estimated annual turnover">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row company-structure-wrap">
-                    <h3>COMPANY STRUCTURE</h3>
-                    <div class="persons-info-list-wrap">
-                        <h4>
-                            NUMBER OF PERSONS
-                            <input type="text" class="readonly" name="num-of-persons" value="1">
-                        </h4>
-                        <ul class="normalize-ul persons-info-list">
-                            <li class="pil-item">
-                                <div class="input-wrap checkbox-wrap">
-                                    <div><h4>Person also can be...</h4></div>
-                                    <div class="radiobutton-item clearfix">
-                                        <input type="checkbox" id="person-checkbox-1" name="personCheckList0[]" value="director">
-                                        <label for="person-checkbox-1"><h4>Director</h4></label>
-                                    </div>
-                                    <div class="radiobutton-item clearfix">
-                                        <input type="checkbox" id="person-checkbox-2" name="personCheckList0[]" value="shareholder">
-                                        <label for="person-checkbox-2"><h4>Shareholder</h4></label>
-                                    </div>
-                                    <input type="text" name="personCheckListErr0" id="warning">
-                                    <div class="radiobutton-item clearfix">
-                                        <input type="checkbox" id="person-checkbox-3" name="personCheckList0[]" value="beneficialOwner">
-                                        <label for="person-checkbox-3"><h4>Beneficial owner</h4></label>
-                                    </div>
-                                </div>
-                                <div class="input-wrap">
-                                    <label for="pilNameOfDirector"><h4>Name of person</h4></label>
-                                    <input type="text" name="pilNameOfPerson0" placeholder="Name Surname" required>
-                                </div>
-                                <div class="input-wrap">
-                                    <label for="pilDOB"><h4>D.O.B.</h4></label>
-                                    <input type="text" name="pilDOB0" id="pilDOB" data-language="en" placeholder="Date of birth">
-                                </div>
-                                <div class="input-wrap">
-                                    <label for="pilTaxResidency"><h4>Tax Residency</h4></label>
-                                    <!--<input type="text" name="dilTaxResidency" placeholder="Tax residency">-->
-                                    <select id="pilTaxResidency" name="pilTaxResidency0" placeholder="Your Placeholder"></select>
-                                </div>
-                                <div class="input-wrap" style="display:none">
-                                    <label for="pilNumberOfShares0"><h4>Number or % of shares</h4></label>
-                                    <input type="text" name="pilNumberOfShares0" placeholder="Number or % of shares">
-                                </div>
-                                <div class="input-wrap">
-                                    <label for="pilAddress"><h4>Address</h4></label>
-                                    <input type="text" name="pilAddress0" placeholder="Address">
-                                </div>
-                                <div class="input-wrap">
-                                    <label for="pilPostcode"><h4>Postcode</h4></label>
-                                    <input type="text" name="pilPostcode0" placeholder="Postcode">
-                                </div>
-                                <div class="input-wrap">
-                                    <label for="pilCity"><h4>City</h4></label>
-                                    <input type="text" name="pilCity0" placeholder="City">
-                                </div>
-                                <div class="input-wrap">
-                                    <label for="pilCountry"><h4>Country</h4></label>
-                                    <select id="pilCountry" name="pilCountry0"></select>
-                                </div>
-                                <div class="divider"></div>
-                            </li>
-                        </ul>
-                        <div class="add-new-item add-new-pil btn">Add new</div>
-                    </div>
-                </div>
-
-                <div class="form-row company-registration-question">
-                    <h5>
-                        In respect of this application, is or has the applicant, director, shareholder, beneficial owner or a close relative
-                        (living or deceased) ever been a politically exposed person?
-                    </h5>
-
-                    <div class="radiobutton-item clearfix">
-                        <input type="radio" id="crq-yes" name="crq" value="yes" checked>
-                        <label for="crq-yes"><h4>Yes</h4></label>
-                    </div>
-                    <div class="radiobutton-item clearfix">
-                        <input type="radio" id="crq-no" name="crq" value="no">
-                        <label for="crq-no"><h4>No</h4></label>
-                    </div>
-                </div>
-
-                <div class="submit">Submit</div>
-
-                <div class="modal-wrap close-modal">
-                    <div class="modal-background"></div>
-                    <div class="modal-content">
-                        <div class="modal-content-header">
-                            <h3>PREVIEW</h3>
-                        </div>
-                        <div class="modal-content-body">
-                            <div class="modal-applicant-wrap">
-                                <h3>APPLICANT</h3>
-                                <ul class="modal-applicant-list normalize-ul">
-                                </ul>
-                            </div>
-                            <div class="modal-company-wrap">
-                                <h3>COMPANY</h3>
-                                <ul class="modal-company-list normalize-ul">
-                                </ul>
-                                <div class="modal-persons-wrap">
-                                    <h3>LIST OF PERSONS</h3>
-                                    <ul class="modal-persons-list normalize-ul">
-                                        <li class="mpl-item">
-                                            <span>Number or % of shares</span>
-                                            <span>ff</span>
-                                            <div class="divider"></div>
-                                            <span>Number or % of shares</span>
-                                            <span>ff</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="submit" name="submit" value="Submit">
-                        <div class="close-modal-btn btn">Close</div>
-                    </div>
-                </div>
-            </form>
+    <div class="company-blocks">
+        <h4>BUSINESS ACTIVITY</h4>
+        <div class="input-wrap">
+            <label for="companyPlannedBusinessActivity"><h4>Planned business activity</h4></label>
+            <input ng-model="$ctrl.businessActivity.activity" type="text" name="companyPlannedBusinessActivity" placeholder="Planned business activity">
         </div>
+        <div class="input-wrap">
+            <label for="companyLocationOfOperation"><h4>Location of operation</h4></label>
+            <input ng-model="$ctrl.businessActivity.location" type="text" name="companyLocationOfOperation" placeholder="Location of operation">
+        </div>
+        <div class="input-wrap">
+            <label for="companyBusinessCountryManage"><h4>Country from which business will be managed: </h4></label>
+            <input ng-model="$ctrl.businessActivity.country" type="text" name="companyBusinessCountryManage" placeholder="Country from which business will be managed">
+        </div>
+        <div class="input-wrap">
+            <label for="companyEstimatedAnnualTurnover"><h4>Estimated annual turnover</h4></label>
+            <input ng-model="$ctrl.businessActivity.turnover" type="text" name="companyEstimatedAnnualTurnover" placeholder="Estimated annual turnover">
+        </div>
+    </div>
+</div>

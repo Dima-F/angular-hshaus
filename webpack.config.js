@@ -20,6 +20,13 @@ module.exports = {
                         loader: 'html-loader',
                         options: { attrs: [':data-src'] }
                     }
+                },
+                {
+                    test:/\.css$/,
+                    use: [
+                        'style-loader',
+                        'css-loader'
+                    ]
                 }
         ]
     },
