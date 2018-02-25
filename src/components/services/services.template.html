@@ -1,29 +1,10 @@
-<div class="form-row services-wrap">
-    <h3>SERVICES</h3>
-    <div class="services-radiobutton-list">
-        <div class="radiobutton-item clearfix">
-            <input ng-model="$ctrl.services.cmpRegInEst" type="checkbox" id="srl-option-1" >
-            <label for="srl-option-1"><h4>Company registration in Estonia</h4></label>
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input ng-model="$ctrl.services.legAdrServ" type="checkbox" id="srl-option-2">
-            <label for="srl-option-2"><h4>Legal address service</h4></label>
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input ng-model="$ctrl.services.authPersServ" type="checkbox" id="srl-option-3" >
-            <label for="srl-option-3"><h4>Authorised contact person services</h4></label>
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input ng-model="$ctrl.services.accServ" type="checkbox" id="srl-option-4" >
-            <label for="srl-option-4"><h4>Accounting services</h4></label>
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input ng-model="$ctrl.services.bankAccOpen" type="checkbox" id="srl-option-5" >
-            <label for="srl-option-5"><h4>Bank account opening</h4></label>
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input ng-model="$ctrl.services.vatReg" type="checkbox" id="srl-option-6" >
-            <label for="srl-option-6"><h4>VAT registration</h4></label>
-        </div>
-    </div>
+<h4 class="mb-3">Services</h4>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="same-address">
+  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
 </div>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="save-info">
+  <label class="custom-control-label" for="save-info">Save this information for next time</label>
+</div>
+<hr class="mb-4">

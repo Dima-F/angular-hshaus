@@ -1,2 +1,7 @@
 1. dynamic adding person components
 2. angular date datepicker
+
+instead bindings use scope (fixing bugs with radiobutton)
+
+перейшов повністю на бутстрап 4 для перевірки функціональності
+зупинився на реалізації компонента services
