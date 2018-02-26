@@ -8,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.bundle.js'
     },
+    devtool:'source-map',
     devServer: {
         contentBase: './dist',
         port: 9000

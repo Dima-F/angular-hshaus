@@ -1,7 +1,7 @@
 const angular = require('angular');
 require('angular-countries');
 const hshaus = angular.module('hshaus',['ngCountries']);
-//require('./css/company_registration.css');
+require('./css/my.css');
 
 hshaus.component('services',require("./components/services"));
 hshaus.component('person',require("./components/person"));

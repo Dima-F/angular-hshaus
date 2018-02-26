@@ -20,11 +20,36 @@ module.exports = function(){
         turnover:""
     };
     this.structure = {
-        directors:[new Person('director'),new Person('director')],
+        directors:[],
         shareholders:[],
         beneficials:[]
     };
     this.question = {
         politicallyExposed:"No"
-    }
+    };
+    this.structure.addDirector = ()=>{
+        if(this.structure.directors.length<10){
+            this.structure.directors.push(new Person('director'));
+        }
+    };
+    this.structure.addShareholder = ()=>{
+        if(this.structure.shareholders.length<10){
+            this.structure.shareholders.push(new Person('shareholder'));
+        }
+    };
+    this.structure.addBeneficial = ()=>{
+        if(this.structure.beneficials.length<10){
+            this.structure.beneficials.push(new Person('beneficial'));
+        }
+    };
+    this.structure.removeDirector = ()=>{
+        this.structure.directors.pop();
+    };
+    this.structure.removeShareholder = ()=>{
+        this.structure.shareholders.pop();
+    };
+    this.structure.removeBeneficial= ()=>{
+        this.structure.beneficials.pop();
+    };
+
 };

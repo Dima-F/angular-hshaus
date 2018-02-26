@@ -1,15 +1,15 @@
 <h4 class="mb-3">{{$ctrl.who.getHeader()}}</h4>
 <h5 class="mb-3">Person can also be...</h5>
 <div class="row">
-    <div class="col-md-4 mb-3" ng-show="$ctrl.isShown('director')">
+    <div class="col-md-4 mb-3" ng-show="$ctrl.who.isShown('director')">
         <input ng-model="$ctrl.who.isDirector" type="checkbox">
         <label>Director</label>
     </div>
-    <div class="col-md-4 mb-3" ng-show="$ctrl.isShown('shareholder')">
+    <div class="col-md-4 mb-3" ng-show="$ctrl.who.isShown('shareholder')">
         <input ng-model="$ctrl.who.isShareholder" type="checkbox">
         <label >Shareholder</label>
     </div>
-    <div class="col-md-4 mb-3" ng-show="$ctrl.isShown('beneficial')">
+    <div class="col-md-4 mb-3" ng-show="$ctrl.who.isShown('beneficial')">
         <input ng-model="$ctrl.who.isBeneficial" type="checkbox">
         <label>Beneficial owner</label>
     </div>

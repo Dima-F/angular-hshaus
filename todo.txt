@@ -1,3 +1,5 @@
-1. dynamic adding person components
+1. summary modal page
 2. angular date datepicker
-3. fix styling person's checkoxes...
+3. styling  checkoxes, radio, send button
+4. adapting json structure for hshause
+5. refactor person's inputs (add flowing, side icons...)

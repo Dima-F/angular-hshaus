@@ -1,16 +1,49 @@
 <h4 class="mb-3">COMPANY STRUCTURE</h4>
 
-<h5 class="mb-3">DIRECTORS</h5>
 <div class="row">
     <div class="col-md-2 mb-3">
-      <label>Number of persons</label>
+        <h5 class="mb-3">DIRECTORS</h5>
     </div>
-    <div class="col-md-2 mb-3">
-        <input ng-model="$ctrl.structure.directors.length" type="text" class="form-control">
+    <div class="col-md-1 mb-3">
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-success btn-sm" ng-click="$ctrl.structure.addDirector()">+</button>
+            <button type="button"  class="btn btn-default btn-sm">{{$ctrl.structure.directors.length}}</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="$ctrl.structure.removeDirector()">-</button>
+        </div>
     </div>
 </div>
 <div ng-repeat="dir in $ctrl.structure.directors">
     <person who="dir"></person>
 </div>
-<h5 class="mb-3">SHAREHOLDERS</h5>
-<h5 class="mb-3">BENEFICIALS</h5>
+
+<div class="row">
+    <div class="col-md-2 mb-3">
+        <h5 class="mb-3">SHAREHOLDERS</h5>
+    </div>
+    <div class="col-md-1 mb-3">
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-success btn-sm" ng-click="$ctrl.structure.addShareholder()">+</button>
+            <button type="button"  class="btn btn-default btn-sm">{{$ctrl.structure.shareholders.length}}</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="$ctrl.structure.removeShareholder()">-</button>
+        </div>
+    </div>
+</div>
+<div ng-repeat="shar in $ctrl.structure.shareholders">
+    <person who="shar"></person>
+</div>
+
+<div class="row">
+    <div class="col-md-2 mb-3">
+        <h5 class="mb-3">BENEFICIALS</h5>
+    </div>
+    <div class="col-md-1 mb-3">
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-success btn-sm" ng-click="$ctrl.structure.addBeneficial()">+</button>
+            <button type="button"  class="btn btn-default btn-sm">{{$ctrl.structure.shareholders.length}}</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="$ctrl.structure.removeBeneficial()">-</button>
+        </div>
+    </div>
+</div>
+<div ng-repeat="ben in $ctrl.structure.beneficials">
+    <person who="ben"></person>
+</div>
