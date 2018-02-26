@@ -6,6 +6,7 @@ const hshaus = angular.module('hshaus',['ngCountries']);
 hshaus.component('services',require("./components/services"));
 hshaus.component('person',require("./components/person"));
 hshaus.component('company',require("./components/company"));
+hshaus.component('structure',require("./components/structure"));
 hshaus.component('question',require("./components/question"));
 hshaus.component('modal',require("./components/modal"));
 

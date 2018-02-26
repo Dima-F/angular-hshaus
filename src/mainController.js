@@ -10,5 +10,21 @@ module.exports = function(){
         vatReg:false
     };
     this.applicant = new Person('applicant');
-    this.director = new Person('director');
+    this.company = {
+        option1:"",
+        option2:"",
+        option3:"",
+        activity:"",
+        location:"",
+        country:"",
+        turnover:""
+    };
+    this.structure = {
+        directors:[new Person('director'),new Person('director')],
+        shareholders:[],
+        beneficials:[]
+    };
+    this.question = {
+        politicallyExposed:"No"
+    }
 };

@@ -1,74 +1,91 @@
-<div class="form-row applicant-wrap">
-    <h3>{{$ctrl.who.getHeader().toUpperCase()}}</h3>
-    <!--
-    <div class="input-wrap checkbox-wrap">
-        <div><h4>Person also can be...</h4></div>
-        <div class="radiobutton-item clearfix">
-            <input type="checkbox" ng-model="$ctrl.who.isDirector" id="$ctrl.who.uuid" ng-true-value>
-            <label for="$ctrl.who.uuid+'director'"><h4>Director</h4></label>
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input type="checkbox" ng-model="$ctrl.who.isShareholder" id="$ctrl.who.uuid+'shareholder'" >
-            <label for="$ctrl.who.uuid+'shareholder'"><h4>Shareholder</h4></label>
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input type="checkbox" ng-model="$ctrl.who.isBeneficial" id="$ctrl.who.uuid+'beneficial'" >
-            <label for="$ctrl.who.uuid+'beneficial'"><h4>Beneficial owner</h4></label>
-        </div>
+<h4 class="mb-3">{{$ctrl.who.getHeader()}}</h4>
+<h5 class="mb-3">Person can also be...</h5>
+<div class="row">
+    <div class="col-md-4 mb-3" ng-show="$ctrl.isShown('director')">
+        <input ng-model="$ctrl.who.isDirector" type="checkbox">
+        <label>Director</label>
     </div>
-    -->
-    <div class="input-wrap checkbox-wrap">
-        <div><h4>Person also can be...</h4></div>
-        <div class="radiobutton-item clearfix">
-            <input type="checkbox" ng-model="$ctrl.who.isDirector">
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input type="checkbox" ng-model="$ctrl.who.isShareholder">
-        </div>
-        <div class="radiobutton-item clearfix">
-            <input type="checkbox" ng-model="$ctrl.who.isBeneficial">
-        </div>
+    <div class="col-md-4 mb-3" ng-show="$ctrl.isShown('shareholder')">
+        <input ng-model="$ctrl.who.isShareholder" type="checkbox">
+        <label >Shareholder</label>
     </div>
-    <div class="input-wrap">
-        <label for="applicantName"><h4>Name</h4></label>
-        <input ng-model="$ctrl.who.fullName" type="text" name="applicantName" placeholder="Name Surname" required>
-    </div>
-    <div class="input-wrap">
-        <label for="applicantTaxResidency"><h4>Tax residency</h4></label>
-        <input ng-model="$ctrl.who.taxResidency" type="text" name="applicantTaxResidency" list="countrylist"   placeholder="Type country...">
-        <ngcountries></ngcountries>
-    </div>
-    <div class="input-wrap residental-address">
-        <label for="applicantResidentialAddress"><h4>Residential address</h4></label>
-        <input ng-model="$ctrl.who.residentalAddress" type="text" name="applicantResidentialAddress" placeholder="Residential address">
-    </div>
-    <div class="input-wrap" ng-show="$ctrl.isShareholder">
-        <label for="applicantNumberOfShares"><h4>Number or % of shares</h4></label>
-        <input ng-model="$ctrl.who.numbOfShares" type="text" name="applicantNumberOfShares" placeholder="Number or % of shares">
-    </div>
-    <div class="input-wrap" ng-show="$ctrl.who.isInCompany()">
-        <label for="applicantDOB"><h4>D.O.B.</h4></label>
-        <input ng-model="$ctrl.who.dob" type="text" name="applicantDOB"  placeholder="Date of birth">
-    </div>
-    <div class="input-wrap">
-        <label for="applicantPostcode"><h4>Postcode</h4></label>
-        <input ng-model="$ctrl.who.postCode" type="text" name="applicantPostcode" placeholder="Postcode">
-    </div>
-    <div class="input-wrap">
-        <label for="applicantCity"><h4>City</h4></label>
-        <input ng-model="$ctrl.who.city" type="text" name="applicantCity" placeholder="City">
-    </div>
-    <div class="input-wrap">
-        <label for="applicantCountry"><h4>Country</h4></label>
-        <input ng-model="$ctrl.who.country" type="text" name="applicantCountry" list="countrylist"   placeholder="Type country...">
-        <ngcountries></ngcountries>
-    </div>
-    <div class="input-wrap">
-        <label for="applicantEmail"><h4>E-mail</h4></label>
-        <input ng-model="$ctrl.who.email" type="email" name="applicantEmail" placeholder="E-mail" required>
-    </div>
-    <div class="input-wrap">
-        <label for="applicantTelephone"><h4>Telephone</h4></label>
-        <input ng-model="$ctrl.who.phone" type="tel" name="applicantTelephone"  placeholder="Telephone" required>
+    <div class="col-md-4 mb-3" ng-show="$ctrl.isShown('beneficial')">
+        <input ng-model="$ctrl.who.isBeneficial" type="checkbox">
+        <label>Beneficial owner</label>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12 mb-3">
+      <label>Name of person</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">@</span>
+        </div>
+        <input ng-model="$ctrl.who.fullName" type="text" class="form-control" placeholder="Name of person" required>
+        <div class="invalid-feedback" style="width: 100%;">
+          Name is required.
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row" ng-show="$ctrl.who.isInCompany()">
+    <div class="col-md-6 mb-3">
+      <label>Date of birthday</span></label>
+      <input ng-model="$ctrl.who.dob" type="text" class="form-control" placeholder="Date of birthday">
+      <div class="invalid-feedback">
+        Please enter a valid date of birthday
+      </div>
+    </div>
+    <div class="col-md-6 mb-3" ng-show="$ctrl.who.isShareholder">
+        <label>Number or % of shares</label>
+        <input ng-model="$ctrl.who.numbOfShares" type="text" class="form-control" placeholder="Number or % of shares">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="email">Email</label>
+      <input ng-model="$ctrl.who.email" type="email" class="form-control" placeholder="you@example.com" required>
+      <div class="invalid-feedback">
+        Please enter a valid nonblank email address.
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Country</label>
+      <input ng-model="$ctrl.who.taxResidency" type="text" list="countrylist" class="form-control"   placeholder="Type country..." required>
+      <ngcountries></ngcountries>
+      <div class="invalid-feedback">
+        Please enter the country.
+      </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+      <label>City</label>
+      <input ng-model="$ctrl.who.city" type="text" class="form-control" placeholder="City" required>
+      <div class="invalid-feedback">
+        Please enter the city.
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Residential address</label>
+      <input ng-model="$ctrl.who.address" type="text" class="form-control" placeholder="1234 Main St" required>
+      <div class="invalid-feedback">
+        Please enter your address.
+      </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+      <label>Telephone</label>
+      <input ng-model="$ctrl.who.phone" type="text" class="form-control" placeholder="Telephone">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Post code</label>
+      <input ng-model="$ctrl.who.postCode" type="text" class="form-control" placeholder="Post code">
+    </div>
+</div>
+<hr class="mb-4">

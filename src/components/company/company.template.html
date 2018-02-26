@@ -1,38 +1,42 @@
-<div class="form-row company-wrap">
-    <h3>COMPANY</h3>
-    <div class="input-wrap">
-        <label for="companyNameOpt1"><h4>Option 1 </h4></label>
-        <input ng-model="$ctrl.option1" type="text" name="companyNameOpt1" placeholder="Company name" required>
+<h4 class="mb-3">COMPANY</h4>
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+      <label>Option 1</label>
+      <input ng-model="$ctrl.company.option1" type="text" class="form-control" placeholder="Company name">
     </div>
-
-    <div class="input-wrap">
-        <label for="companyNameOpt2"><h4>Option 2</h4></label>
-        <input ng-model="$ctrl.option2" type="text" name="companyNameOpt2" placeholder="Company name">
+    <div class="col-md-4 mb-3">
+      <label>Option 2</label>
+      <input ng-model="$ctrl.company.option2" type="text" class="form-control" placeholder="Company name">
     </div>
-
-    <div class="input-wrap">
-        <label for="companyNameOpt3"><h4>Option 3</h4></label>
-        <input ng-model="$ctrl.option3" type="text" name="companyNameOpt3" placeholder="Company name">
-    </div>
-
-
-    <div class="company-blocks">
-        <h4>BUSINESS ACTIVITY</h4>
-        <div class="input-wrap">
-            <label for="companyPlannedBusinessActivity"><h4>Planned business activity</h4></label>
-            <input ng-model="$ctrl.businessActivity.activity" type="text" name="companyPlannedBusinessActivity" placeholder="Planned business activity">
-        </div>
-        <div class="input-wrap">
-            <label for="companyLocationOfOperation"><h4>Location of operation</h4></label>
-            <input ng-model="$ctrl.businessActivity.location" type="text" name="companyLocationOfOperation" placeholder="Location of operation">
-        </div>
-        <div class="input-wrap">
-            <label for="companyBusinessCountryManage"><h4>Country from which business will be managed: </h4></label>
-            <input ng-model="$ctrl.businessActivity.country" type="text" name="companyBusinessCountryManage" placeholder="Country from which business will be managed">
-        </div>
-        <div class="input-wrap">
-            <label for="companyEstimatedAnnualTurnover"><h4>Estimated annual turnover</h4></label>
-            <input ng-model="$ctrl.businessActivity.turnover" type="text" name="companyEstimatedAnnualTurnover" placeholder="Estimated annual turnover">
-        </div>
+    <div class="col-md-4 mb-3">
+      <label>Option 3</label>
+      <input ng-model="$ctrl.company.option3" type="text" class="form-control" placeholder="Company name">
     </div>
 </div>
+<h6 class="mb-3">BUSINESS ACTIVITY</h6>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+      <label>Planned business activity</label>
+      <input ng-model="$ctrl.company.activity" type="text" class="form-control" placeholder="Planned business activity">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Location of operation</label>
+      <input ng-model="$ctrl.company.location" type="text" class="form-control" placeholder="Location of operation">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+      <label>Country from which business will be managed</label>
+      <input ng-model="$ctrl.company.country" type="text" class="form-control" placeholder="Country from which business will be managed">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Estimated annual turnover</label>
+      <input ng-model="$ctrl.company.location" type="text" class="form-control" placeholder="Estimated annual turnover">
+    </div>
+</div>
+
+
+<hr class="mb-4">

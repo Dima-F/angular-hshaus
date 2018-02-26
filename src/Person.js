@@ -8,19 +8,22 @@ function Person(mainPost){
     this.isApplicant=this.mainPost==="applicant";
 
     this.fullName="some full name";
-    this.dob=undefined;
-    this.taxResidency="";
-    this.residentalAddress="";
-    this.numbOfShares=undefined;
-    this.postCode=undefined;
-    this.city="";
-    this.country=undefined;
-    this.email="";
-    this.phone=undefined;
+    this.dob="1";
+    this.taxResidency="2";
+    this.residentalAddress="some residental address";
+    this.numbOfShares="5";
+    this.postCode="3";
+    this.city="4";
+    this.country=null;
+    this.email="6";
+    this.phone="7";
 };
 Person.prototype.isInCompany = function(){
     return this.isDirector || this.isShareholder || this.isBeneficial;
 };
+Person.prototype.isShown = function(post){
+    return post!==this.mainPost;
+}
 Person.prototype.getHeader = function(){
     return this.mainPost.toUpperCase();
 };
