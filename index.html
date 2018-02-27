@@ -5,32 +5,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
     <title>Hshause test</title>
 </head>
 <body ng-app="hshaus">
+    <p></p>
     <div class="container" ng-controller="MainController as main">
+      <!--
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h2>Registration form</h2>
-        <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        <p class="lead">Please, fill inputs to register company</p>
       </div>
-
+      -->
       <div class="row">
-        <div class="col-md-12">
           <form class="needs-validation" novalidate>
-            <services services="main.services"></services>
-            <person who="main.applicant"></person>
-            <company company="main.company"></company>
-            <structure structure="main.structure"></structure>
-            <question question="main.question"></question>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                <services services="main.services"></services>
+                <person who="main.applicant"></person>
+                <company company="main.company"></company>
+                <structure structure="main.structure"></structure>
+                <question question="main.question"></question>
+                <button class="btn btn-lg" type="submit" data-toggle="modal" data-target="#myModal">Submit</button>
           </form>
-        </div>
       </div>
-
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p></p>
-      </footer>
+      
+      <modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question"></modal>
+      
+      <p></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

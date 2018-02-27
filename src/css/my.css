@@ -11,3 +11,25 @@ h4 {
     color: #9b7b4d;
     font: 400 22px/26px "Libre Baskerville";
 }
+h3 {
+    color: #9b7b4d;
+    font:  "Libre Baskerville";
+}
+
+.btn-lg {
+    background: #9b7b4d;
+    color:#fff;
+    
+}
+.btn-lg:hover {
+    background: #b38340;
+}
+#exampleModalLabel {
+    text-align: center!important;
+}
+.modalBlock div {
+    margin-left: 5px;
+}
+
+
+

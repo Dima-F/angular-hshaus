@@ -1,6 +1,10 @@
 module.exports =  {
     template:require('./modal.template.html'),
-    controller: function ModalController() {
-
+    bindings: {
+        services: '=',
+        applicant: '=',
+        company: '=',
+        structure: '=',
+        question: '='
     }
 }

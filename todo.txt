@@ -1,5 +1,6 @@
-1. summary modal page
+1. form validation
 2. angular date datepicker
-3. styling  checkoxes, radio, send button
 4. adapting json structure for hshause
-5. refactor person's inputs (add flowing, side icons...)
+6. put person control in colored panel for better visualization
+7. service.template.html model iteration
+8. filtering service preview output

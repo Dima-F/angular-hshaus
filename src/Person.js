@@ -9,7 +9,7 @@ function Person(mainPost){
 
     this.fullName="";
     this.dob="";
-    this.taxResidency="";
+    this.taxResidency=null;
     this.residentalAddress="";
     this.numbOfShares="";
     this.postCode="";
@@ -30,7 +30,12 @@ Person.prototype.isShown = function(post){
     }
 }
 Person.prototype.getHeader = function(){
-    return this.mainPost.toUpperCase();
+    if(this.isApplicant){
+        return this.mainPost.toUpperCase();
+    } else {
+        return this.mainPost.charAt(0).toUpperCase() + this.mainPost.slice(1);
+    }
+    
 };
 
 module.exports = Person;

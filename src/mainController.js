@@ -1,14 +1,39 @@
 const Person = require('./Person');
 
 module.exports = function(){
-    this.services = {
-        cmpRegInEst:true,
-        legAdrServ:false,
-        authPersServ:false,
-        accServ:false,
-        bankAccOpen:false,
-        vatReg:false
-    };
+    this.services = [
+        {
+            key:'cmpRegInEst',
+            value:true,
+            description:'Company registration in Estonia'
+        },
+        {
+            key:'legAdrServ',
+            value:false,
+            description:'Legal address service'
+        },
+        {
+            key:'authPersServ',
+            value:false,
+            description:'Authorised contact person services'
+        },
+        {
+            key:'accServ',
+            value:false,
+            description:'Accounting services'
+        },
+        {
+            key:'bankAccOpen',
+            value:false,
+            description:'Bank account opening'
+        },
+        {
+            key:'vatReg',
+            value:false,
+            description:'VAT registration'
+        }
+    ];
+    
     this.applicant = new Person('applicant');
     this.company = {
         option1:"",
@@ -27,6 +52,7 @@ module.exports = function(){
     this.question = {
         politicallyExposed:"No"
     };
+    
     this.structure.addDirector = ()=>{
         if(this.structure.directors.length<10){
             this.structure.directors.push(new Person('director'));

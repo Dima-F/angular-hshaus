@@ -1,12 +1,11 @@
-
 <h5 class="mb-3">In respect of this application, is or has the applicant, director, shareholder, beneficial owner or a close relative (living or deceased) ever been a politically exposed person?</h5>
-<div class="d-block my-3">
-    <div class="custom-control custom-radio">
-        <input ng-model="$ctrl.question.politicallyExposed" id="q-yes" name="queston" value="Yes"  type="radio" class="custom-control-input">
-        <label class="custom-control-label" for="q-yes">Yes</label>
-    </div>
-    <div class="custom-control custom-radio">
-        <input ng-model="$ctrl.question.politicallyExposed" id="q-no" name="question" value="No"  type="radio" class="custom-control-input">
-        <label class="custom-control-label" for="q-no">No</label>
-    </div>
+<div>
+    <label class="container-r">Yes
+        <input type="radio" ng-model="$ctrl.question.politicallyExposed" name="radio" value="Yes">
+        <span class="checkmark-r"></span>
+    </label>
+    <label class="container-r">No
+        <input type="radio" ng-model="$ctrl.question.politicallyExposed" name="radio" value="No">
+        <span class="checkmark-r"></span>
+    </label>
 </div>
