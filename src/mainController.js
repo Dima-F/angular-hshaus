@@ -1,39 +1,15 @@
 const Person = require('./Person');
 
-module.exports = function(){
-    this.services = [
-        {
-            key:'cmpRegInEst',
-            value:true,
-            description:'Company registration in Estonia'
-        },
-        {
-            key:'legAdrServ',
-            value:false,
-            description:'Legal address service'
-        },
-        {
-            key:'authPersServ',
-            value:false,
-            description:'Authorised contact person services'
-        },
-        {
-            key:'accServ',
-            value:false,
-            description:'Accounting services'
-        },
-        {
-            key:'bankAccOpen',
-            value:false,
-            description:'Bank account opening'
-        },
-        {
-            key:'vatReg',
-            value:false,
-            description:'VAT registration'
-        }
-    ];
-    
+module.exports = function($scope){
+    this.services = {
+        cmpRegInEst:true,
+        legAdrServ:false,
+        authPersServ:false,
+        accServ:false,
+        bankAccOpen:false,
+        bankAccOpen:false,
+        vatReg:false
+    };
     this.applicant = new Person('applicant');
     this.company = {
         option1:"",
@@ -52,7 +28,7 @@ module.exports = function(){
     this.question = {
         politicallyExposed:"No"
     };
-    
+
     this.structure.addDirector = ()=>{
         if(this.structure.directors.length<10){
             this.structure.directors.push(new Person('director'));
@@ -76,6 +52,13 @@ module.exports = function(){
     };
     this.structure.removeBeneficial= ()=>{
         this.structure.beneficials.pop();
+    };
+    this.submitForm = function() {
+    	// check to make sure the form is completely valid
+    	if ($scope.mainForm.$valid) {
+    		alert('perfect validation');
+            $scope.modalPreview.toggle();
+    	}
     };
 
 };

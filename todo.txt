@@ -1,6 +1,10 @@
 1. form validation
-2. angular date datepicker
-4. adapting json structure for hshause
-6. put person control in colored panel for better visualization
-7. service.template.html model iteration
-8. filtering service preview output
+    1.1 run everything with ng-message
+    1.2 programatically hide and show modal
+2. angular date datepicker *
+3. adapting json structure for hshause
+4. put person control in colored panel for better visualization *
+
+
+
+* deffered

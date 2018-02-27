@@ -11,26 +11,19 @@
 <body ng-app="hshaus">
     <p></p>
     <div class="container" ng-controller="MainController as main">
-      <!--
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h2>Registration form</h2>
-        <p class="lead">Please, fill inputs to register company</p>
-      </div>
-      -->
       <div class="row">
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" name="mainForm" novalidate>
                 <services services="main.services"></services>
                 <person who="main.applicant"></person>
                 <company company="main.company"></company>
                 <structure structure="main.structure"></structure>
                 <question question="main.question"></question>
-                <button class="btn btn-lg" type="submit" data-toggle="modal" data-target="#myModal">Submit</button>
+                <button class="btn btn-secondary btn-lg" type="submit" ng-click="main.submitForm()">Submit</button>
+                <!--<button class="btn btn-secondary btn-lg" type="submit" data-toggle="modal" data-target="#myModal">Submit</button>-->
           </form>
       </div>
-      
+
       <modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question"></modal>
-      
       <p></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

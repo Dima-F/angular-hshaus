@@ -1,4 +1,3 @@
-const uuid = require('uuid/v4');
 function Person(mainPost){
     this.mainPost = mainPost;
     //this.isDirector=this.mainPost==="director";
@@ -35,7 +34,7 @@ Person.prototype.getHeader = function(){
     } else {
         return this.mainPost.charAt(0).toUpperCase() + this.mainPost.slice(1);
     }
-    
+
 };
 
 module.exports = Person;

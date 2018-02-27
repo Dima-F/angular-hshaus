@@ -1,28 +1,30 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+}
 .form-control:focus {
   border-color: #9b7b4d;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #9b7b4d;
 }
-h1, h2, h3, h4, h5, h6, label, p {
-    font-family: Roboto, Arial, sans-serif;
-    /*font: normal 13px/20px "Montserrat";*/
-    /*font: 400 13px/20px Montserrat;*/
+h3 {
+    color: #9b7b4d;
+    font: 400 24px/28px "Libre Baskerville";
 }
 h4 {
     color: #9b7b4d;
-    font: 400 22px/26px "Libre Baskerville";
+    font:  400 22px/26px "Libre Baskerville";
 }
-h3 {
-    color: #9b7b4d;
-    font:  "Libre Baskerville";
+h5 {
+    font:  400 20px/24px "Libre Baskerville";
 }
 
-.btn-lg {
+.btn-secondary {
     background: #9b7b4d;
     color:#fff;
-    
+    border-color:#b38340;
 }
-.btn-lg:hover {
+.btn-secondary :hover{
     background: #b38340;
+    border: none;
 }
 #exampleModalLabel {
     text-align: center!important;
@@ -30,6 +32,3 @@ h3 {
 .modalBlock div {
     margin-left: 5px;
 }
-
-
-

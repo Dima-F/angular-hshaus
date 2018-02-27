@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "angular": "^1.6.9",
-    "angular-countries": "^1.1.5",
-    "uuid": "^3.2.1"
+    "angular-countries": "^1.1.5"
   }
 }
