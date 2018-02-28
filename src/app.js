@@ -12,4 +12,4 @@ hshaus.component('structure',require("./components/structure"));
 hshaus.component('question',require("./components/question"));
 hshaus.component('modal',require("./components/modal"));
 
-hshaus.controller("MainController", require('./mainController'));
+hshaus.controller("MainController",require('./mainController'));

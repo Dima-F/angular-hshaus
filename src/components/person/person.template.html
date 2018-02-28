@@ -26,67 +26,44 @@
 <div class="row">
     <div class="col-md-6">
         <div>
-            <label>Name of person</label>
-            <div class="input-group">
-              <input ng-model="$ctrl.who.fullName" type="text" class="form-control" placeholder="Name of person" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                Name is required.
-              </div>
-            </div>
+            <label>Name of person *</label>
+            <input ng-model="$ctrl.who.fullName" name="fullName" type="text" class="form-control" placeholder="Name of person" required>
         </div>
         <div>
-            <label>Tax residency</label>
+            <label>Tax residency *</label>
             <input ng-model="$ctrl.who.taxResidency" type="text" list="countrylist" class="form-control"   placeholder="Tax residency" required>
             <ngcountries></ngcountries>
-            <div class="invalid-feedback">
-              Please enter the tax residency.
-            </div>
         </div>
         <div ng-show="$ctrl.who.isShareholder">
             <label>Number or % of shares</label>
             <input ng-model="$ctrl.who.numbOfShares" type="text" class="form-control" placeholder="Number or % of shares">
         </div>
         <div>
-            <label>City</label>
+            <label>City *</label>
             <input ng-model="$ctrl.who.city" type="text" class="form-control" placeholder="City" required>
-            <div class="invalid-feedback">
-              Please enter the city.
-            </div>
         </div>
         <div>
-            <label for="email">Email</label>
+            <label for="email">Email *</label>
             <input ng-model="$ctrl.who.email" type="email" class="form-control" placeholder="you@example.com" required>
-            <div class="invalid-feedback">
-              Please enter a valid nonblank email address.
-            </div>
         </div>
     </div>
     <div class="col-md-6">
         <div ng-show="$ctrl.who.isInCompany()">
-            <label>Date of birthday</span></label>
+            <label>Date of birthday *</span></label>
             <input ng-model="$ctrl.who.dob" id="datepicker1" type="text" class="form-control" placeholder="Date of birthday">
-            <div class="invalid-feedback">
-               Please enter a valid date of birthday
-            </div>
         </div>
         <div>
-            <label>Residential address</label>
+            <label>Residential address *</label>
             <input ng-model="$ctrl.who.address" type="text" class="form-control" placeholder="1234 Main St" required>
-            <div class="invalid-feedback">
-              Please enter your address.
-            </div>
         </div>
         <div>
             <label>Post code</label>
             <input ng-model="$ctrl.who.postCode" type="text" class="form-control" placeholder="Post code">
         </div>
         <div>
-            <label>Country</label>
+            <label>Country *</label>
             <input ng-model="$ctrl.who.country" type="text" list="countrylist" class="form-control"   placeholder="Country" required>
             <ngcountries></ngcountries>
-            <div class="invalid-feedback">
-              Please enter the country.
-            </div>
         </div>
         <div>
             <label>Telephone</label>

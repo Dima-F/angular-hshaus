@@ -1,6 +1,6 @@
 const Person = require('./Person');
-
-module.exports = function($scope){
+const config = require('./config');
+module.exports = function(){
     this.services = {
         cmpRegInEst:true,
         legAdrServ:false,
@@ -53,12 +53,4 @@ module.exports = function($scope){
     this.structure.removeBeneficial= ()=>{
         this.structure.beneficials.pop();
     };
-    this.submitForm = function() {
-    	// check to make sure the form is completely valid
-    	if ($scope.mainForm.$valid) {
-    		alert('perfect validation');
-            $scope.modalPreview.toggle();
-    	}
-    };
-
 };
