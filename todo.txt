@@ -1,6 +1,5 @@
 1. improve form validation *
 2. angular date datepicker *
-3. adapting json structure for hshause
 4. put person control in colored panel for better visualization *
 
 

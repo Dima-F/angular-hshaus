@@ -15,6 +15,16 @@ module.exports = {
     module:{
         rules: [
                 {
+                  test: /\.js$/,
+                  exclude: /(node_modules|bower_components)/,
+                  use: {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: ['@babel/preset-env']
+                    }
+                  }
+                },
+                {
                     test: /\.(html)$/,
                     use: {
                         loader: 'html-loader',
@@ -31,7 +41,7 @@ module.exports = {
         ]
     },
     plugins: [
-        //new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
         new WriteFilePlugin(),
         new HtmlWebpackPlugin({
             template: './index.html'

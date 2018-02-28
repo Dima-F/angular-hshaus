@@ -8,23 +8,24 @@
     <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
     <title>Hshause test</title>
 </head>
-<body ng-app="hshaus">
-    <p></p>
-    <div class="container" ng-controller="MainController as main">
-      <div class="row">
-          <form class="needs-validation" name="mainForm" novalidate>
-                <services services="main.services"></services>
-                <person who="main.applicant"></person>
-                <company company="main.company"></company>
-                <structure structure="main.structure"></structure>
-                <question question="main.question"></question>
-                <p class="text-danger" ng-show="mainForm.$invalid">To enable submit button, please enter all required fields (with *) and check email and date fields validation!</p>
-                <button class="btn btn-secondary btn-lg" type="submit" data-toggle="modal" data-target="#myModal" ng-disabled="mainForm.$invalid">Submit</button>
-          </form>
-      </div>
-      <modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question" sendData="main.sendData"></modal>
-      <p></p>
+<body>
+    <div class="app-body" ng-app="hshaus">
+        <div class="container" ng-controller="MainController as main">
+          <div class="row">
+              <form class="needs-validation" name="mainForm" novalidate>
+                    <services services="main.services"></services>
+                    <person who="main.applicant"></person>
+                    <company company="main.company"></company>
+                    <structure structure="main.structure"></structure>
+                    <question question="main.question"></question>
+                    <p class="text-danger" ng-show="mainForm.$invalid">To enable submit button, please enter all required fields (with *) and check email and date fields validation!</p>
+                    <button class="btn btn-secondary btn-lg" type="submit" data-toggle="modal" data-target="#myModal" ng-disabled="mainForm.$invalid">Submit</button>
+              </form>
+          </div>
+          <modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question" sendData="main.sendData"></modal>
+        </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
