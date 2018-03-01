@@ -4,6 +4,7 @@ const hshaus = angular.module('hshaus',['ngCountries']);
 require('./css/my.css');
 require('./css/radio.css');
 require('./css/checkbox.css');
+require('./css/modal.css');
 
 hshaus.component('services',require("./components/services"));
 hshaus.component('person',require("./components/person"));

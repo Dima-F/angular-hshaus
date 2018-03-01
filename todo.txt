@@ -1,7 +1,12 @@
 1. improve form validation *
 2. angular date datepicker *
-4. put person control in colored panel for better visualization *
+3. put person control in colored panel for better visualization *
 
+4. testing https server!!!
+5. html page with pdf button & pay button (may be enable routing...)
+6. disable validation for hiden inputs
+7. format modal page
+8. header for registration-form
 
 
 * deffered

@@ -1,9 +1,8 @@
-<div class="modal fade" name="modalPreview" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal" style='display:block' ng-show="$ctrl.modal.visible">
     <div class="modal-content">
       <div class="modal-header">
         <h4 id="exampleModalLabel">PREVIEW</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$ctrl.modal.visible=false;">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -84,14 +83,14 @@
             <div class="row">{{$ben.phone}}</div>
         </div>
 
-        <!--end of modal-body-->
+
       </div>
       <div class="modal-footer">
         <p class="text-success">{{$ctrl.ok}}</p>
         <p class="text-danger">{{$ctrl.error}}</p>
-        <button type="button" class="btn" data-dismiss="modal">Back</button>
+        <button type="button" class="btn" ng-click="$ctrl.modal.visible=false;">Back</button>
         <button type="button" class="btn btn-secondary" ng-click="$ctrl.submit()">Submit</button>
       </div>
+      
     </div>
-  </div>
 </div>

@@ -6,7 +6,8 @@ module.exports =  {
         applicant: '=',
         company: '=',
         structure: '=',
-        question: '='
+        question: '=',
+        modal: '='
     },
     controller:['$http','$window',function ModalController($http,$window) {
         this.submit = ()=>{
@@ -39,5 +40,5 @@ module.exports =  {
             this.error="";
             this.ok="Success!";
         };
-    }] 
+    }]
 }

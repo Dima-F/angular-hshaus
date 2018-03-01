@@ -1,6 +1,12 @@
 const Person = require('./Person');
 const config = require('./config');
 module.exports = function(){
+    this.modal= {
+        visible:false
+    };
+    this.toggleModal = ()=>{
+        this.modal.visible=!this.modal.visible;
+    };
     this.services = {
         cmpRegInEst:true,
         legAdrServ:false,
