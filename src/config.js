@@ -6,5 +6,5 @@ module.exports = {
     //url:'http://93.72.190.134:3000',
     
     //remote s.bpi.in.ua erpjs server
-    url:'http://s.bpi.in.ua:3001/api/form-registrations'
+    url:'https://s.bpi.in.ua/api/form-registrations'
 };
