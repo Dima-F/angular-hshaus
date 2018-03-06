@@ -1,13 +1,14 @@
 <div class="modal" style='display:block' ng-show="$ctrl.modal.visible">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 id="exampleModalLabel">PREVIEW</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$ctrl.modal.visible=false;">
+      <div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$ctrl.close()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
+        <div class="preview-header">
+          <h4>PREVIEW</h4>
+        </div>
         <h4>SERVICES</h4>
         <div class="modalBlock">
             <div class="row" ng-show="$ctrl.services.cmpRegInEst" >Company registration in Estonia</div>
@@ -20,7 +21,7 @@
 
         <h4>APPLICANT</h4>
         <div class="modalBlock">
-            <div class="row">{{$ctrl.applicant.fullName}}</div>
+            <div class="row" style='text-decoration:underline'>{{$ctrl.applicant.fullName}}</div>
             <div class="row">{{$ctrl.applicant.dob}}</div>
             <div class="row">Tax residency:{{$ctrl.applicant.taxResidency}}</div>
             <div class="row">{{$ctrl.applicant.residentalAddress}}</div>
@@ -48,49 +49,61 @@
         <h4>COMPANY STRUCTURE</h4>
         <h5>DIRECTORS</h5>
         <div ng-repeat="dir in $ctrl.structure.directors" class="modalBlock">
-            <div class="row">{{dir.fullName}}</div>
+            <div class="row" style='text-decoration:underline'>{{dir.fullName}}</div>
+            {{$ctrl.getCheckboxInfo(dir)}}
             <div class="row">{{dir.dob}}</div>
-            <div class="row">Tax residency:{{dir.taxResidency}}</div>
-            <div class="row">{{$dir.residentalAddress}}</div>
-            <div class="row">{{$dir.postCode}}</div>
-            <div class="row">{{$dir.city}}</div>
-            <div class="row">{{$dir.country}}</div>
-            <div class="row">{{$dir.email}}</div>
-            <div class="row">{{$dir.phone}}</div>
+            <div class="row">Tax residency: {{dir.taxResidency}}</div>
+            <div class="row">{{dir.residentalAddress}}</div>
+            <div class="row">{{dir.postCode}}</div>
+            <div class="row">{{dir.city}}</div>
+            <div class="row">{{dir.country}}</div>
+            <div class="row">{{dir.email}}</div>
+            <div class="row">{{dir.phone}}</div>
         </div><br/>
         <h5>SHAREHOLDERS</h5>
         <div ng-repeat="shr in $ctrl.structure.shareholders" class="modalBlock">
-            <div class="row">{{shr.fullName}}</div>
+            <div class="row" style='text-decoration:underline'>{{shr.fullName}}</div>
+            {{$ctrl.getCheckboxInfo(dir)}}
             <div class="row">{{shr.dob}}</div>
             <div class="row">Tax residency:{{shr.taxResidency}}</div>
-            <div class="row">{{$shr.residentalAddress}}</div>
-            <div class="row">{{$shr.postCode}}</div>
-            <div class="row">{{$shr.city}}</div>
-            <div class="row">{{$shr.country}}</div>
-            <div class="row">{{$shr.email}}</div>
-            <div class="row">{{$shr.phone}}</div>
+            <div class="row">{{shr.residentalAddress}}</div>
+            <div class="row">{{shr.postCode}}</div>
+            <div class="row">{{shr.city}}</div>
+            <div class="row">{{shr.country}}</div>
+            <div class="row">{{shr.email}}</div>
+            <div class="row">{{shr.phone}}</div>
         </div><br/>
         <h5>BENEFICIALS</h5>
         <div ng-repeat="ben in $ctrl.structure.beneficials" class="modalBlock">
-            <div class="row">{{ben.fullName}}</div>
+            <div class="row" style='text-decoration:underline'>{{ben.fullName}}</div>
+            {{$ctrl.getCheckboxInfo(dir)}}
             <div class="row">{{ben.dob}}</div>
             <div class="row">Tax residency:{{ben.taxResidency}}</div>
-            <div class="row">{{$ben.residentalAddress}}</div>
-            <div class="row">{{$ben.postCode}}</div>
-            <div class="row">{{$ben.city}}</div>
-            <div class="row">{{$ben.country}}</div>
-            <div class="row">{{$ben.email}}</div>
-            <div class="row">{{$ben.phone}}</div>
+            <div class="row">{{ben.residentalAddress}}</div>
+            <div class="row">{{ben.postCode}}</div>
+            <div class="row">{{ben.city}}</div>
+            <div class="row">{{ben.country}}</div>
+            <div class="row">{{ben.email}}</div>
+            <div class="row">{{ben.phone}}</div>
         </div>
 
 
       </div>
-      <div class="modal-footer">
-        <p class="text-success">{{$ctrl.ok}}</p>
-        <p class="text-danger">{{$ctrl.error}}</p>
-        <button type="button" class="btn" ng-click="$ctrl.modal.visible=false;">Back</button>
-        <button type="button" class="btn btn-secondary" ng-click="$ctrl.submit()">Submit</button>
+      <div class="my-modal-footer">
+          <div class="row">
+              <div class="col-md-8">
+                  <div class="alert alert-success" ng-show="$ctrl.response=='ok'">
+                      <strong>Success!</strong> You can <a href="#!/summary" class="alert-link">see your invoice</a>.
+                  </div>
+                  <div class="alert alert-danger" ng-show="$ctrl.response=='error'">
+                      <strong>Error!</strong> Remote server is not responding.
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <button type="button" class="btn btn-lg" ng-click="$ctrl.close()">Back</button>
+                  <button type="button" class="btn btn-secondary btn-lg" ng-click="$ctrl.submit()">Submit</button>
+              </div>
+          </div>
       </div>
-      
     </div>
 </div>

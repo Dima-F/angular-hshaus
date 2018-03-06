@@ -9,36 +9,36 @@ module.exports =  {
         question: '=',
         modal: '='
     },
-    controller:['$http','$window',function ModalController($http,$window) {
+    controller:['$http','$window','$location','$rootScope',function ModalController($http, $window, $location, $rootScope) {
+        this.response="";
+        
         this.submit = ()=>{
-            this.ok="";
-            this.error="";
             let data = {};
             data.services=this.services;
             data.applicant = this.applicant;
             data.company = this.company;
             data.structure = this.structure;
             data.question = this.question;
-            var self=this;
             $http.post(config.url, data).then(
-                   function(){
-                     self.showOK();
+                   ()=>{
+                     this.response="ok";
+                     /*
                      setTimeout(()=>{
-                         $window.location = '/';
+                         //$window.location.href = '!#error';
+                         $location.path('/error');
+                         $rootScope.apply();
                      },3000);
+                     */
                    }, 
-                   function(){
-                     self.showError();
+                   ()=>{
+                     this.response="error";
                    }
             );
         };
-        this.showError = ()=>{
-            this.error="Remote server is not responding!";
-            this.ok="";
-        };
-        this.showOK = ()=>{
-            this.error="";
-            this.ok="Success!";
-        };
+        
+        this.close = ()=>{
+            this.response="";
+            this.modal.visible=false;
+        }
     }]
 }

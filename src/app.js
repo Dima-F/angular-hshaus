@@ -15,13 +15,13 @@ hshaus.config(['$routeProvider','$locationProvider',
                             <structure structure="main.structure"></structure>
                             <question question="main.question"></question>
                             <p class="text-danger" ng-show="mainForm.$invalid">To enable submit button, please enter all required fields (with *) and check email and date fields validation!</p>
-                            <button class="btn btn-secondary btn-lg" type="submit" data-toggle="modal" data-target="#myModal" ng-disabled="mainForm.$invalid">Submit</button>
+                            <button class="btn btn-secondary btn-lg" ng-click="main.toggleModal()" ng-disabled="mainForm.$invalid">Submit</button>
                       </form>
                   </div>
-                  <modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question" sendData="main.sendData"></modal>`
+                  <modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question" sendData="main.sendData" modal="main.modal"></modal>`
         }).
-        when('/error', {
-          template: '<h1>Error</h1>'
+        when('/summary', {
+          template: '<h1>Html form will be here</h1>'
         }).
         otherwise('/');
     }

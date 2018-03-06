@@ -2,10 +2,9 @@
 2. angular date datepicker *
 3. put person control in colored panel for better visualization *
 
-5. html page with pdf button & pay button (may be enable routing...)
+5. html page with pdf button & pay button - trnsmit here pdf link info!
 6. disable validation for hiden inputs
-7. format modal page
-8. header for registration-form
+
 
 
 * deffered

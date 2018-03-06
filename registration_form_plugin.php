@@ -13,18 +13,7 @@ function main_function(){
     
     <div class="app-body" ng-app="hshaus">
         <div class="container" ng-controller="MainController as main">
-            <div class="row">
-                <form class="needs-validation" name="mainForm" novalidate>
-                    <services services="main.services"></services>
-                    <person who="main.applicant"></person>
-                    <company company="main.company"></company>
-                    <structure structure="main.structure"></structure>
-                    <question question="main.question"></question>
-                    <p class="text-danger" ng-show="mainForm.$invalid">To enable submit button, please enter all required fields (with *) and check email and date fields validation!</p>
-                    <button class="btn btn-secondary btn-lg" type="submit" ng-disabled="mainForm.$invalid" ng-click="main.toggleModal()">Submit</button>
-                </form>
-            </div>
-            <modal modal="main.modal" services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question"></modal>
+            <ng-view></ng-view>
         </div>
     </div>
     ';
