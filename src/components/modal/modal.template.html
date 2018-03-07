@@ -1,109 +1,99 @@
-<div class="modal" style='display:block' ng-show="$ctrl.modal.visible">
-    <div class="modal-content">
-      <div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$ctrl.close()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="preview-header">
-          <h4>PREVIEW</h4>
+<div class="row">
+    <h4>PREVIEW</h4>
+</div>
+
+<div class="row">
+    <h4>SERVICES</h4>
+</div>
+<div class="row">
+    <ul>
+        <li ng-show="$ctrl.services.cmpRegInEst">Company registration in Estonia</li>
+        <li ng-show="$ctrl.services.legAdrServ">Legal address service</li>
+        <li ng-show="$ctrl.services.authPersServ">Authorised contact person services</li>
+        <li ng-show="$ctrl.services.accServ">Accounting services</li>
+        <li ng-show="$ctrl.services.bankAccOpen">Bank account opening</li>
+        <li ng-show="$ctrl.services.vatReg">VAT registration</li>
+    </ul>
+</div>
+
+<div class="row">
+    <h4>APPLICANT</h4>
+    <div class="row" style='text-decoration:underline'>{{$ctrl.applicant.fullName}}</div>
+    <div class="row">{{$ctrl.applicant.dob}}</div>
+    <div class="row">Tax residency:{{$ctrl.applicant.taxResidency}}</div>
+    <div class="row">{{$ctrl.applicant.residentalAddress}}</div>
+    <div class="row">{{$ctrl.applicant.postCode}}</div>
+    <div class="row">{{$ctrl.applicant.city}}</div>
+    <div class="row">{{$ctrl.applicant.country}}</div>
+    <div class="row">{{$ctrl.applicant.email}}</div>
+    <div class="row">{{$ctrl.applicant.phone}}</div>
+</div>
+<div class="row">
+    <h4>COMPANY</h4>
+    <div class="row">Name option 1:{{$ctrl.company.option1}}</div>
+    <div class="row">Name option 2:{{$ctrl.company.option2}}</div>
+    <div class="row">Name option 3:{{$ctrl.company.option3}}</div>
+</div>
+<div class="row">
+    <h5>BUSINESS ACTIVITY</h5>
+    <div class="row">Planned business activity:{{$ctrl.company.activity}}</div>
+    <div class="row">Location of operation:{{$ctrl.company.location}}</div>
+    <div class="row">Country from which business will be managed:{{$ctrl.company.country}}</div>
+    <div class="row">Estimated annual turnover:{{$ctrl.company.turnover}}</div>
+</div>
+<div class="row">
+    <h4>COMPANY STRUCTURE</h4>
+    <h5>DIRECTORS</h5>
+    <div ng-repeat="dir in $ctrl.structure.directors">
+        <div style='text-decoration:underline'>{{dir.fullName}}</div>
+        {{$ctrl.getCheckboxInfo(dir)}}
+        <div>{{dir.dob}}</div>
+        <div>Tax residency: {{dir.taxResidency}}</div>
+        <div>{{dir.residentalAddress}}</div>
+        <div>{{dir.postCode}}</div>
+        <div>{{dir.city}}</div>
+        <div>{{dir.country}}</div>
+        <div>{{dir.email}}</div>
+        <div>{{dir.phone}}</div>
+    </div><br/>
+    <h5>SHAREHOLDERS</h5>
+    <div ng-repeat="shr in $ctrl.structure.shareholders">
+        <div class="row" style='text-decoration:underline'>{{shr.fullName}}</div>
+        {{$ctrl.getCheckboxInfo(dir)}}
+        <div class="row">{{shr.dob}}</div>
+        <div class="row">Tax residency:{{shr.taxResidency}}</div>
+        <div class="row">{{shr.residentalAddress}}</div>
+        <div class="row">{{shr.postCode}}</div>
+        <div class="row">{{shr.city}}</div>
+        <div class="row">{{shr.country}}</div>
+        <div class="row">{{shr.email}}</div>
+        <div class="row">{{shr.phone}}</div>
+    </div><br/>
+    <h5>BENEFICIALS</h5>
+    <div ng-repeat="ben in $ctrl.structure.beneficials">
+        <div class="row" style='text-decoration:underline'>{{ben.fullName}}</div>
+        {{$ctrl.getCheckboxInfo(dir)}}
+        <div class="row">{{ben.dob}}</div>
+        <div class="row">Tax residency:{{ben.taxResidency}}</div>
+        <div class="row">{{ben.residentalAddress}}</div>
+        <div class="row">{{ben.postCode}}</div>
+        <div class="row">{{ben.city}}</div>
+        <div class="row">{{ben.country}}</div>
+        <div class="row">{{ben.email}}</div>
+        <div class="row">{{ben.phone}}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="alert alert-success" ng-show="$ctrl.response=='ok'">
+            <strong>Success!</strong> You can <a href="#!/summary" class="alert-link">see your invoice</a>.
         </div>
-        <h4>SERVICES</h4>
-        <div class="modalBlock">
-            <div class="row" ng-show="$ctrl.services.cmpRegInEst" >Company registration in Estonia</div>
-            <div class="row" ng-show="$ctrl.services.legAdrServ">Legal address service</div>
-            <div class="row" ng-show="$ctrl.services.authPersServ">Authorised contact person services</div>
-            <div class="row" ng-show="$ctrl.services.accServ">Accounting services</div>
-            <div class="row" ng-show="$ctrl.services.bankAccOpen">Bank account opening</div>
-            <div class="row" ng-show="$ctrl.services.vatReg">VAT registration</div>
-        </div><hr>
-
-        <h4>APPLICANT</h4>
-        <div class="modalBlock">
-            <div class="row" style='text-decoration:underline'>{{$ctrl.applicant.fullName}}</div>
-            <div class="row">{{$ctrl.applicant.dob}}</div>
-            <div class="row">Tax residency:{{$ctrl.applicant.taxResidency}}</div>
-            <div class="row">{{$ctrl.applicant.residentalAddress}}</div>
-            <div class="row">{{$ctrl.applicant.postCode}}</div>
-            <div class="row">{{$ctrl.applicant.city}}</div>
-            <div class="row">{{$ctrl.applicant.country}}</div>
-            <div class="row">{{$ctrl.applicant.email}}</div>
-            <div class="row">{{$ctrl.applicant.phone}}</div>
-        </div><hr>
-
-        <h4>COMPANY</h4>
-        <div class="modalBlock">
-            <div class="row">Name option 1:{{$ctrl.company.option1}}</div>
-            <div class="row">Name option 2:{{$ctrl.company.option2}}</div>
-            <div class="row">Name option 3:{{$ctrl.company.option3}}</div>
-        </div></br>
-        <h5>BUSINESS ACTIVITY</h5>
-        <div class="modalBlock">
-            <div class="row">Planned business activity:{{$ctrl.company.activity}}</div>
-            <div class="row">Location of operation:{{$ctrl.company.location}}</div>
-            <div class="row">Country from which business will be managed:{{$ctrl.company.country}}</div>
-            <div class="row">Estimated annual turnover:{{$ctrl.company.turnover}}</div>
-        </div><hr>
-
-        <h4>COMPANY STRUCTURE</h4>
-        <h5>DIRECTORS</h5>
-        <div ng-repeat="dir in $ctrl.structure.directors" class="modalBlock">
-            <div class="row" style='text-decoration:underline'>{{dir.fullName}}</div>
-            {{$ctrl.getCheckboxInfo(dir)}}
-            <div class="row">{{dir.dob}}</div>
-            <div class="row">Tax residency: {{dir.taxResidency}}</div>
-            <div class="row">{{dir.residentalAddress}}</div>
-            <div class="row">{{dir.postCode}}</div>
-            <div class="row">{{dir.city}}</div>
-            <div class="row">{{dir.country}}</div>
-            <div class="row">{{dir.email}}</div>
-            <div class="row">{{dir.phone}}</div>
-        </div><br/>
-        <h5>SHAREHOLDERS</h5>
-        <div ng-repeat="shr in $ctrl.structure.shareholders" class="modalBlock">
-            <div class="row" style='text-decoration:underline'>{{shr.fullName}}</div>
-            {{$ctrl.getCheckboxInfo(dir)}}
-            <div class="row">{{shr.dob}}</div>
-            <div class="row">Tax residency:{{shr.taxResidency}}</div>
-            <div class="row">{{shr.residentalAddress}}</div>
-            <div class="row">{{shr.postCode}}</div>
-            <div class="row">{{shr.city}}</div>
-            <div class="row">{{shr.country}}</div>
-            <div class="row">{{shr.email}}</div>
-            <div class="row">{{shr.phone}}</div>
-        </div><br/>
-        <h5>BENEFICIALS</h5>
-        <div ng-repeat="ben in $ctrl.structure.beneficials" class="modalBlock">
-            <div class="row" style='text-decoration:underline'>{{ben.fullName}}</div>
-            {{$ctrl.getCheckboxInfo(dir)}}
-            <div class="row">{{ben.dob}}</div>
-            <div class="row">Tax residency:{{ben.taxResidency}}</div>
-            <div class="row">{{ben.residentalAddress}}</div>
-            <div class="row">{{ben.postCode}}</div>
-            <div class="row">{{ben.city}}</div>
-            <div class="row">{{ben.country}}</div>
-            <div class="row">{{ben.email}}</div>
-            <div class="row">{{ben.phone}}</div>
+        <div class="alert alert-danger" ng-show="$ctrl.response=='error'">
+            <strong>Error!</strong> Remote server is not responding.
         </div>
-
-
-      </div>
-      <div class="my-modal-footer">
-          <div class="row">
-              <div class="col-md-8">
-                  <div class="alert alert-success" ng-show="$ctrl.response=='ok'">
-                      <strong>Success!</strong> You can <a href="#!/summary" class="alert-link">see your invoice</a>.
-                  </div>
-                  <div class="alert alert-danger" ng-show="$ctrl.response=='error'">
-                      <strong>Error!</strong> Remote server is not responding.
-                  </div>
-              </div>
-              <div class="col-md-4">
-                  <button type="button" class="btn btn-lg" ng-click="$ctrl.close()">Back</button>
-                  <button type="button" class="btn btn-secondary btn-lg" ng-click="$ctrl.submit()">Submit</button>
-              </div>
-          </div>
-      </div>
+    </div>
+    <div class="col-md-4">
+        <button type="button" class="btn btn-lg" ng-click="$ctrl.close()">Back</button>
+        <button type="button" class="btn btn-secondary btn-lg" ng-click="$ctrl.submit()">Submit</button>
     </div>
 </div>

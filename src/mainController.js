@@ -1,11 +1,13 @@
 const Person = require('./Person');
 const config = require('./config');
-module.exports = function(){
+module.exports = ['$location', function($location){
+    /*
     this.modal= { visible:false };
     this.toggleModal = ()=>{
         this.modal.visible=!this.modal.visible;
         console.log(this.modal.visible);
     };
+    */
     this.services = {
         cmpRegInEst:true,
         legAdrServ:false,
@@ -33,6 +35,9 @@ module.exports = function(){
     this.question = {
         politicallyExposed:"No"
     };
+    this.showReview = ()=>{
+        $location.path('/review');
+    }
 
     this.structure.addDirector = ()=>{
         if(this.structure.directors.length<10){
@@ -58,4 +63,4 @@ module.exports = function(){
     this.structure.removeBeneficial= ()=>{
         this.structure.beneficials.pop();
     };
-};
+}];

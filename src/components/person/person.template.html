@@ -26,7 +26,7 @@
 <div class="row">
     <div class="col-md-6">
         <div>
-            <label>Name of person *</label>
+            <label>Name Surname *</label>
             <input ng-model="$ctrl.who.fullName" name="fullName" type="text" class="form-control" placeholder="Name of person" required>
         </div>
         <div>
@@ -43,13 +43,13 @@
             <input ng-model="$ctrl.who.city" type="text" class="form-control" placeholder="City" required>
         </div>
         <div>
-            <label for="email">Email *</label>
+            <label for="email">E-mail *</label>
             <input ng-model="$ctrl.who.email" type="email" class="form-control" placeholder="you@example.com" required>
         </div>
     </div>
     <div class="col-md-6">
         <div ng-show="$ctrl.who.isInCompany()">
-            <label>Date of birthday *</span></label>
+            <label>D.O.B. *</span></label>
             <!--<input ng-model="$ctrl.who.dob" type="text" class="form-control" placeholder="mm/dd/yyyy" ng-pattern="/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/" required>-->
             <input ng-model="$ctrl.who.dob" type="text" class="form-control" placeholder="mm/dd/yyyy">
         </div>
@@ -58,7 +58,7 @@
             <input ng-model="$ctrl.who.address" type="text" class="form-control" placeholder="1234 Main St" required>
         </div>
         <div>
-            <label>Post code</label>
+            <label>Postcode</label>
             <input ng-model="$ctrl.who.postCode" type="text" class="form-control" placeholder="Post code">
         </div>
         <div>

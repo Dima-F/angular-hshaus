@@ -38,7 +38,8 @@ module.exports =  {
         
         this.close = ()=>{
             this.response="";
-            this.modal.visible=false;
+            //this.modal.visible=false;
+            $location.path('/');
         }
     }]
 }
