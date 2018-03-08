@@ -1,21 +1,21 @@
 <h4>{{$ctrl.who.getHeader()}}</h4>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col">
         <h5>Person can also be:</h5>
     </div>
-    <div class="col-md-3" ng-show="$ctrl.who.isShown('director')">
+    <div class="col" ng-show="$ctrl.who.isShown('director')">
         <label class="container-c">Director
           <input type="checkbox"  ng-model="$ctrl.who.isDirector">
           <span class="checkmark-c"></span>
         </label>
     </div>
-    <div class="col-md-3" ng-show="$ctrl.who.isShown('shareholder')">
+    <div class="col" ng-show="$ctrl.who.isShown('shareholder')">
         <label class="container-c">Shareholder
           <input type="checkbox"  ng-model="$ctrl.who.isShareholder">
           <span class="checkmark-c"></span>
         </label>
     </div>
-    <div class="col-md-3" ng-show="$ctrl.who.isShown('beneficial')">
+    <div class="col" ng-show="$ctrl.who.isShown('beneficial')">
         <label class="container-c">Beneficial
           <input type="checkbox"  ng-model="$ctrl.who.isBeneficial">
           <span class="checkmark-c"></span>
@@ -24,52 +24,61 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
-        <div>
-            <label>Name Surname *</label>
-            <input ng-model="$ctrl.who.fullName" name="fullName" type="text" class="form-control" placeholder="Name of person" required>
-        </div>
-        <div>
-            <label>Tax residency *</label>
-            <input ng-model="$ctrl.who.taxResidency" type="text" list="countrylist" class="form-control"   placeholder="Tax residency" required>
-            <ngcountries></ngcountries>
-        </div>
-        <div ng-show="$ctrl.who.isShareholder">
-            <label>Number or % of shares</label>
-            <input ng-model="$ctrl.who.numbOfShares" type="text" class="form-control" placeholder="Number or % of shares">
-        </div>
-        <div>
-            <label>City *</label>
-            <input ng-model="$ctrl.who.city" type="text" class="form-control" placeholder="City" required>
-        </div>
-        <div>
-            <label for="email">E-mail *</label>
-            <input ng-model="$ctrl.who.email" type="email" class="form-control" placeholder="you@example.com" required>
-        </div>
+    <div class="col">
+        <label>Name Surname *</label>
+        <input ng-model="$ctrl.who.fullName" name="fullName" type="text" class="form-control" placeholder="Name of person" required>
     </div>
-    <div class="col-md-6">
-        <div ng-show="$ctrl.who.isInCompany()">
-            <label>D.O.B. *</span></label>
-            <!--<input ng-model="$ctrl.who.dob" type="text" class="form-control" placeholder="mm/dd/yyyy" ng-pattern="/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/" required>-->
-            <input ng-model="$ctrl.who.dob" type="text" class="form-control" placeholder="mm/dd/yyyy">
-        </div>
-        <div>
-            <label>Residential address *</label>
-            <input ng-model="$ctrl.who.address" type="text" class="form-control" placeholder="1234 Main St" required>
-        </div>
-        <div>
-            <label>Postcode</label>
-            <input ng-model="$ctrl.who.postCode" type="text" class="form-control" placeholder="Post code">
-        </div>
-        <div>
-            <label>Country *</label>
-            <input ng-model="$ctrl.who.country" type="text" list="countrylist" class="form-control"   placeholder="Country" required>
-            <ngcountries></ngcountries>
-        </div>
-        <div>
-            <label>Telephone</label>
-            <input ng-model="$ctrl.who.phone" type="text" class="form-control" placeholder="Telephone">
-        </div>
+    <div class="col" ng-show="$ctrl.who.isInCompany()">
+        <label>D.O.B. *</span></label>
+        <!--<input ng-model="$ctrl.who.dob" type="text" class="form-control" placeholder="mm/dd/yyyy" ng-pattern="/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/" required>-->
+        <input ng-model="$ctrl.who.dob" type="text" class="form-control" placeholder="mm/dd/yyyy">
     </div>
 </div>
-<hr class="mb-4">
+
+<div class="row">
+    <div class="col">
+        <label>Tax residency *</label>
+        <input ng-model="$ctrl.who.taxResidency" type="text" list="countrylist" class="form-control"   placeholder="Tax residency" required>
+        <ngcountries></ngcountries>
+    </div>
+    <div class="col" ng-show="$ctrl.who.isShareholder">
+        <label>Number or % of shares</label>
+        <input ng-model="$ctrl.who.numbOfShares" type="text" class="form-control" placeholder="Number or % of shares">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label>Residential address *</label>
+        <input ng-model="$ctrl.who.residentalAddress" type="text" class="form-control" placeholder="1234 Main St" required>
+    </div>
+    <div class="col">
+        <label for="email">E-mail *</label>
+        <input ng-model="$ctrl.who.email" type="email" class="form-control" placeholder="you@example.com" required>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label>Country *</label>
+        <input ng-model="$ctrl.who.country" type="text" list="countrylist" class="form-control"   placeholder="Country" required>
+        <ngcountries></ngcountries>
+    </div>
+    <div class="col">
+        <label>City *</label>
+        <input ng-model="$ctrl.who.city" type="text" class="form-control" placeholder="City" required>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label>Postcode</label>
+        <input ng-model="$ctrl.who.postCode" type="text" class="form-control" placeholder="Post code">
+    </div>
+    <div class="col">
+        <label>Telephone</label>
+        <input ng-model="$ctrl.who.phone" type="text" class="form-control" placeholder="Telephone">
+    </div>
+</div>
+
+<hr class="md">

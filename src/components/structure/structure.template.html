@@ -5,7 +5,7 @@
         <h5>DIRECTORS</h5>
     </div>
     <div class="col-md-2">
-        <div class="btn-group" role="group1">
+        <div class="btn-group">
             <button type="button" class="btn" ng-click="$ctrl.structure.removeDirector()"><span class="fa fa-lg fa-trash"></span></button>
             <button type="button"  class="btn">{{$ctrl.structure.directors.length}}</button>
             <button type="button" class="btn" ng-click="$ctrl.structure.addDirector()"><span class="fa fa-lg fa-user-plus"></span></button>
@@ -21,7 +21,7 @@
         <h5>SHAREHOLDERS</h5>
     </div>
     <div class="col-md-2">
-        <div class="btn-group" role="group2">
+        <div class="btn-group">
             <button type="button" class="btn" ng-click="$ctrl.structure.removeShareholder()"><span class="fa fa-lg fa-trash"></span></button>
             <button type="button"  class="btn">{{$ctrl.structure.shareholders.length}}</button>
             <button type="button" class="btn" ng-click="$ctrl.structure.addShareholder()"><span class="fa fa-lg fa-user-plus"></span></button>
@@ -37,7 +37,7 @@
         <h5>BENEFICIALS</h5>
     </div>
     <div class="col-md-2">
-        <div class="btn-group" role="group3">
+        <div class="btn-group">
             <button type="button" class="btn" ng-click="$ctrl.structure.removeBeneficial()"><span class="fa fa-lg fa-trash"></span></button>
             <button type="button"  class="btn">{{$ctrl.structure.beneficials.length}}</button>
             <button type="button" class="btn" ng-click="$ctrl.structure.addBeneficial()"><span class="fa fa-lg fa-user-plus"></span></button>
@@ -47,3 +47,4 @@
 <div ng-repeat="beneficial in $ctrl.structure.beneficials">
     <person who="beneficial"></person>
 </div>
+<hr>

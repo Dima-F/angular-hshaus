@@ -15,7 +15,8 @@ hshaus.config(['$routeProvider','$locationProvider',
                             <structure structure="main.structure"></structure>
                             <question question="main.question"></question>
                             <p class="text-danger" ng-show="mainForm.$invalid">Please enter all required fields (with *) and check email and date fields format.</p>
-                            <button class="btn btn-secondary btn-lg" ng-click="main.showReview()" ng-disabled="mainForm.$invalid">Review</button>
+                            <button class="btn btn-secondary btn-lg" ng-click="main.showReview()">Review</button>
+                            <!--<button class="btn btn-secondary btn-lg" ng-click="main.showReview()" ng-disabled="mainForm.$invalid">Review</button>-->
                       </form>
                   </div>`
         }).
