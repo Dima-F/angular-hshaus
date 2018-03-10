@@ -10,6 +10,7 @@ hshaus.config(['$routeProvider','$locationProvider',
           template: `<div class="row">
                       <form class="needs-validation" name="mainForm" novalidate>
                             <services services="main.services"></services>
+                            <h4>APPLICANT</h4>
                             <person who="main.applicant"></person>
                             <company company="main.company"></company>
                             <structure structure="main.structure"></structure>

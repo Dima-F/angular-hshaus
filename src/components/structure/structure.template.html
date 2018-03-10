@@ -6,15 +6,16 @@
     </div>
     <div class="col-md-2">
         <div class="btn-group">
-            <button type="button" class="btn" ng-click="$ctrl.structure.removeDirector()"><span class="fa fa-lg fa-trash"></span></button>
-            <button type="button"  class="btn">{{$ctrl.structure.directors.length}}</button>
-            <button type="button" class="btn" ng-click="$ctrl.structure.addDirector()"><span class="fa fa-lg fa-user-plus"></span></button>
+            <button type="button" class="btn" ng-click="$ctrl.removeDirector()"><span class="fa fa-lg fa-trash"></span></button>
+            <button type="button"  class="btn">{{$ctrl.structure.getAllDirectorsCount()}}</button>
+            <button type="button" class="btn" ng-click="$ctrl.addDirector()"><span class="fa fa-lg fa-user-plus"></span></button>
         </div>
     </div>
 </div>
-<div ng-repeat="director in $ctrl.structure.directors">
+<div ng-repeat="director in $ctrl.structure.getAllDirectors()">
     <person who="director"></person>
 </div>
+
 
 <div class="row">
     <div class="col-md-3">
@@ -22,13 +23,13 @@
     </div>
     <div class="col-md-2">
         <div class="btn-group">
-            <button type="button" class="btn" ng-click="$ctrl.structure.removeShareholder()"><span class="fa fa-lg fa-trash"></span></button>
-            <button type="button"  class="btn">{{$ctrl.structure.shareholders.length}}</button>
-            <button type="button" class="btn" ng-click="$ctrl.structure.addShareholder()"><span class="fa fa-lg fa-user-plus"></span></button>
+            <button type="button" class="btn" ng-click="$ctrl.removeShareholder()"><span class="fa fa-lg fa-trash"></span></button>
+            <button type="button"  class="btn">{{$ctrl.structure.getAllShareholdersCount()}}</button>
+            <button type="button" class="btn" ng-click="$ctrl.addShareholder()"><span class="fa fa-lg fa-user-plus"></span></button>
         </div>
     </div>
 </div>
-<div ng-repeat="shareholder in $ctrl.structure.shareholders">
+<div ng-repeat="shareholder in $ctrl.structure.getAllShareholders()">
     <person who="shareholder"></person>
 </div>
 
@@ -38,13 +39,13 @@
     </div>
     <div class="col-md-2">
         <div class="btn-group">
-            <button type="button" class="btn" ng-click="$ctrl.structure.removeBeneficial()"><span class="fa fa-lg fa-trash"></span></button>
-            <button type="button"  class="btn">{{$ctrl.structure.beneficials.length}}</button>
-            <button type="button" class="btn" ng-click="$ctrl.structure.addBeneficial()"><span class="fa fa-lg fa-user-plus"></span></button>
+            <button type="button" class="btn" ng-click="$ctrl.removeBeneficial()"><span class="fa fa-lg fa-trash"></span></button>
+            <button type="button"  class="btn">{{$ctrl.structure.getAllBeneficialsCount()}}</button>
+            <button type="button" class="btn" ng-click="$ctrl.addBeneficial()"><span class="fa fa-lg fa-user-plus"></span></button>
         </div>
     </div>
 </div>
-<div ng-repeat="beneficial in $ctrl.structure.beneficials">
+<div ng-repeat="beneficial in $ctrl.structure.getAllBeneficials()">
     <person who="beneficial"></person>
 </div>
 <hr>

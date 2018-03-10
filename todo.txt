@@ -5,6 +5,9 @@
 5. html page with pdf button & pay button - trnsmit here pdf link info!
 6. disable validation for hiden inputs
 
+7. test multiple structure behavior
+8. styling structure block
+9. validation!!!
 
 
 * deffered

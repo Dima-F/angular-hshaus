@@ -1,21 +1,21 @@
-<h4>{{$ctrl.who.getHeader()}}</h4>
+<!--<h4>{{$ctrl.who.getHeader()}}</h4> replace to structure conmponent-->
 <div class="row">
     <div class="col">
-        <h5>Person can also be:</h5>
+        <label>Person's position:</label>
     </div>
-    <div class="col" ng-show="$ctrl.who.isShown('director')">
+    <div class="col">
         <label class="container-c">Director
           <input type="checkbox"  ng-model="$ctrl.who.isDirector">
           <span class="checkmark-c"></span>
         </label>
     </div>
-    <div class="col" ng-show="$ctrl.who.isShown('shareholder')">
+    <div class="col">
         <label class="container-c">Shareholder
           <input type="checkbox"  ng-model="$ctrl.who.isShareholder">
           <span class="checkmark-c"></span>
         </label>
     </div>
-    <div class="col" ng-show="$ctrl.who.isShown('beneficial')">
+    <div class="col">
         <label class="container-c">Beneficial
           <input type="checkbox"  ng-model="$ctrl.who.isBeneficial">
           <span class="checkmark-c"></span>

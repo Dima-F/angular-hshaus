@@ -17,7 +17,8 @@ body.app-body {
     font:  400 22px/26px "Libre Baskerville";
 }
  .app-body h5 {
-    font:  400 20px/24px "Libre Baskerville";
+    font:  400 18px/22px "Libre Baskerville";
+    color: #9b7b4d;
 }
 
  .app-body .btn-secondary {
@@ -29,9 +30,10 @@ body.app-body {
     background: #b38340 !important;
     border: none !important;
 }
-.modalBlock div {
-    margin-left: 5px;
+.app-body .span-list span {
+    margin-left: 10px;
 }
+
 .app-body .btn {
     border-radius:0;
 }
@@ -57,4 +59,3 @@ body.app-body {
     border-color: rgba(217, 120, 35, 0.9) !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px rgba(217, 120, 35,0.6)!important;
 }
-
