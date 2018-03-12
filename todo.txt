@@ -10,4 +10,8 @@
 9. validation!!!
 
 
+insert real data in html Inv
+bag in server with empty applicant's dob
+pdf button-link
+
 * deffered

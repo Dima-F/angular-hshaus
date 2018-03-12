@@ -11,10 +11,8 @@ module.exports = ['$location', function($location){
         bankAccOpen:false,
         vatReg:false
     };
-
     this.applicant = new Person();
     this.applicant.isApplicant=true;
-
     this.company = {
         option1:"",
         option2:"",
@@ -24,12 +22,11 @@ module.exports = ['$location', function($location){
         country:"",
         turnover:""
     };
-
     this.structure = new Structure();
-
     this.question = {
         politicallyExposed:"No"
     };
+    this.inv = {};
     this.showReview = ()=>{
         $location.path('/review');
     };

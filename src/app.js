@@ -21,10 +21,10 @@ hshaus.config(['$routeProvider','$locationProvider',
                   </div>`
         }).
         when('/review', {
-            template:'<modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question" sendData="main.sendData" modal="main.modal"></modal>'
+            template:'<modal services="main.services" applicant="main.applicant" company="main.company" structure="main.structure" question="main.question" inv="main.inv"></modal>'
         }).
         when('/summary', {
-          template: '<h1>Html form will be here</h1>'
+          template: '<invoice inv="main.inv"></invoice>'
         }).
         otherwise('/');
     }
@@ -37,11 +37,14 @@ require('./css/radio.css');
 require('./css/checkbox.css');
 require('./css/modal.css');
 
+
 hshaus.component('services',require("./components/services"));
 hshaus.component('person',require("./components/person"));
 hshaus.component('company',require("./components/company"));
 hshaus.component('structure',require("./components/structure"));
 hshaus.component('question',require("./components/question"));
 hshaus.component('modal',require("./components/modal"));
+hshaus.component('invoice',require("./components/invoice"));
 
 hshaus.controller("MainController",require('./mainController'));
+

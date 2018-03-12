@@ -7,7 +7,7 @@ module.exports =  {
         company: '=',
         structure: '=',
         question: '=',
-        modal: '='
+        inv: '='
     },
     controller:['$http','$location',function ModalController($http, $location) {
         this.response="";
@@ -19,10 +19,11 @@ module.exports =  {
             data.structure = this.structure;
             data.question = this.question;
             $http.post(config.url, data).then(
-               ()=>{
+               (res)=>{
                  this.response="ok";
+                 Object.assign(this.inv, res.data);
                }, 
-               ()=>{
+               (err)=>{
                  this.response="error";
                }
             );
