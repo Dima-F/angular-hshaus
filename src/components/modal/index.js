@@ -9,9 +9,8 @@ module.exports =  {
         question: '=',
         modal: '='
     },
-    controller:['$http','$window','$location','$rootScope',function ModalController($http, $window, $location, $rootScope) {
+    controller:['$http','$location',function ModalController($http, $location) {
         this.response="";
-        
         this.submit = ()=>{
             let data = {};
             data.services=this.services;
@@ -20,25 +19,16 @@ module.exports =  {
             data.structure = this.structure;
             data.question = this.question;
             $http.post(config.url, data).then(
-                   ()=>{
-                     this.response="ok";
-                     /*
-                     setTimeout(()=>{
-                         //$window.location.href = '!#error';
-                         $location.path('/error');
-                         $rootScope.apply();
-                     },3000);
-                     */
-                   }, 
-                   ()=>{
-                     this.response="error";
-                   }
+               ()=>{
+                 this.response="ok";
+               }, 
+               ()=>{
+                 this.response="error";
+               }
             );
         };
-        
         this.close = ()=>{
             this.response="";
-            //this.modal.visible=false;
             $location.path('/');
         }
     }]
