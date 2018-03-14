@@ -1,7 +1,8 @@
 const angular = require('angular');
-require('angular-countries');
+require('angular-country-picker');
 require('angular-route');
-const hshaus = angular.module('hshaus',['ngCountries','ngRoute']);
+require('angular-moment-picker');
+const hshaus = angular.module('hshaus',['ngRoute','puigcerber.countryPicker','moment-picker']);
 hshaus.config(['$routeProvider','$locationProvider',
     function config($routeProvider,$locationProvider) {
       $locationProvider.hashPrefix('!');
@@ -13,7 +14,7 @@ hshaus.config(['$routeProvider','$locationProvider',
                             <h4>APPLICANT</h4>
                             <person who="main.applicant"></person>
                             <company company="main.company"></company>
-                            <structure structure="main.structure"></structure>
+                            <structure structure="main.structure" applicant="main.applicant"></structure>
                             <question question="main.question"></question>
                             <p class="text-danger" ng-show="mainForm.$invalid">Please enter all required fields (with *) and check email and date fields format.</p>
                             <button class="btn btn-secondary btn-lg" ng-click="main.showReview()" ng-disabled="mainForm.$invalid">Review</button>

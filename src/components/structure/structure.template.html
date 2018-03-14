@@ -1,51 +1,55 @@
 <h4>COMPANY STRUCTURE</h4>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col">
         <h5>DIRECTORS</h5>
-    </div>
-    <div class="col-md-2">
-        <div class="btn-group">
-            <button type="button" class="btn" ng-click="$ctrl.removeDirector()"><span class="fa fa-lg fa-trash"></span></button>
-            <button type="button"  class="btn">{{$ctrl.structure.getAllDirectorsCount()}}</button>
-            <button type="button" class="btn" ng-click="$ctrl.addDirector()"><span class="fa fa-lg fa-user-plus"></span></button>
-        </div>
+        <b>Number of directors: {{$ctrl.getAllDirectorsCount()}}</b>
     </div>
 </div>
+<person who="$ctrl.applicant" ng-show="$ctrl.applicant.isDirector"></person>
 <div ng-repeat="director in $ctrl.structure.getAllDirectors()">
     <person who="director"></person>
+    <br />
 </div>
-
+<div class="row">
+    <div class="col">
+        <button class="btn btn-secondary" ng-click="$ctrl.addDirector()">ADD DIRECTOR</button>
+    </div>
+</div>
+<br />
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col">
         <h5>SHAREHOLDERS</h5>
-    </div>
-    <div class="col-md-2">
-        <div class="btn-group">
-            <button type="button" class="btn" ng-click="$ctrl.removeShareholder()"><span class="fa fa-lg fa-trash"></span></button>
-            <button type="button"  class="btn">{{$ctrl.structure.getAllShareholdersCount()}}</button>
-            <button type="button" class="btn" ng-click="$ctrl.addShareholder()"><span class="fa fa-lg fa-user-plus"></span></button>
-        </div>
+        <b>Number of shareholders: {{$ctrl.getAllShareholdersCount()}}</b>
     </div>
 </div>
+<person who="$ctrl.applicant" ng-show="$ctrl.applicant.isShareholder"></person>
 <div ng-repeat="shareholder in $ctrl.structure.getAllShareholders()">
     <person who="shareholder"></person>
+    <br />
 </div>
-
 <div class="row">
-    <div class="col-md-3">
-        <h5>BENEFICIALS</h5>
-    </div>
-    <div class="col-md-2">
-        <div class="btn-group">
-            <button type="button" class="btn" ng-click="$ctrl.removeBeneficial()"><span class="fa fa-lg fa-trash"></span></button>
-            <button type="button"  class="btn">{{$ctrl.structure.getAllBeneficialsCount()}}</button>
-            <button type="button" class="btn" ng-click="$ctrl.addBeneficial()"><span class="fa fa-lg fa-user-plus"></span></button>
-        </div>
+    <div class="col">
+        <button class="btn btn-secondary" ng-click="$ctrl.addShareholder()">ADD SHAREHOLDER</button>
     </div>
 </div>
+<br />
+<div class="row">
+    <div class="col">
+        <h5>BENEFICIAL OWNERS</h5>
+        <b>Number of beneficial owners: {{$ctrl.getAllBeneficialsCount()}}</b>
+    </div>
+</div>
+<person who="$ctrl.applicant" ng-show="$ctrl.applicant.isBeneficial"></person>
 <div ng-repeat="beneficial in $ctrl.structure.getAllBeneficials()">
     <person who="beneficial"></person>
+    <br />
 </div>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-secondary" ng-click="$ctrl.addBeneficial()">ADD BENEFICIAL OWNER</button>
+    </div>
+</div>
+<br/>
 <hr>

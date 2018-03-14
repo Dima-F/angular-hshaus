@@ -71,9 +71,21 @@
             </div>
         </div>
 
-        <div class="row" ng-show="$ctrl.structure.getAllDirectorsCount()>0">
+        <div class="row" ng-show="$ctrl.structure.getAllDirectorsCount()>0 || $ctrl.applicant.isDirector">
             <div class="col">
                 <h5>DIRECTORS</h5>
+                <div class="span-list" ng-show="$ctrl.applicant.isDirector">
+                    <span style='text-decoration:underline'>{{$ctrl.applicant.fullName}}<br/></span>
+                    <span ng-show="ctrl.applicant.dob">{{$ctrl.applicant.dob}}<br/></span>
+                    <span>Tax residency: {{$ctrl.applicant.taxResidency}}<br/></span>
+                    <span ng-show="ctrl.applicant.numbOfShares">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
+                    <span>{{$ctrl.applicant.residentalAddress}}<br/></span>
+                    <span>{{$ctrl.applicant.postCode}}<br/></span>
+                    <span>{{$ctrl.applicant.city}}<br/></span>
+                    <span>{{$ctrl.applicant.country}}<br/></span>
+                    <span>{{$ctrl.applicant.email}}<br/></span>
+                    <span>{{$ctrl.applicant.phone}}</span>
+                </div>
                 <div ng-repeat="dir in $ctrl.structure.getAllDirectors()" class="span-list">
                     <span style='text-decoration:underline'>{{dir.fullName}}<br/></span>
                     <span ng-show="dir.dob">{{dir.dob}}<br/></span>
@@ -83,15 +95,27 @@
                     <span>{{dir.postCode}}<br/></span>
                     <span>{{dir.city}}<br/></span>
                     <span>{{dir.country}}<br/></span>
-                    <span>{{dir.email}}<br/></span>
-                    <span>{{dir.phone}}</span>
+                    <span ng-show="dir.isApplicant">{{dir.email}}<br/></span>
+                    <span ng-show="dir.isApplicant">{{dir.phone}}</span>
                 </div>
             </div>
         </div>
 
-        <div class="row" ng-show="$ctrl.structure.getAllShareholdersCount()>0">
+        <div class="row" ng-show="$ctrl.structure.getAllShareholdersCount()>0 || $ctrl.applicant.isShareholder">
             <div class="col">
                 <h5>SHAREHOLDERS</h5>
+                <div class="span-list" ng-show="$ctrl.applicant.isShareholder">
+                    <span style='text-decoration:underline'>{{$ctrl.applicant.fullName}}<br/></span>
+                    <span ng-show="ctrl.applicant.dob">{{$ctrl.applicant.dob}}<br/></span>
+                    <span>Tax residency: {{$ctrl.applicant.taxResidency}}<br/></span>
+                    <span ng-show="ctrl.applicant.numbOfShares">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
+                    <span>{{$ctrl.applicant.residentalAddress}}<br/></span>
+                    <span>{{$ctrl.applicant.postCode}}<br/></span>
+                    <span>{{$ctrl.applicant.city}}<br/></span>
+                    <span>{{$ctrl.applicant.country}}<br/></span>
+                    <span>{{$ctrl.applicant.email}}<br/></span>
+                    <span>{{$ctrl.applicant.phone}}</span>
+                </div>
                 <div ng-repeat="shr in $ctrl.structure.getAllShareholders()" class="span-list">
                     <span style='text-decoration:underline'>{{shr.fullName}}<br/></span>
                     <span ng-show="shr.dob">{{shr.dob}}<br/></span>
@@ -101,15 +125,27 @@
                     <span>{{shr.postCode}}<br/></span>
                     <span>{{shr.city}}<br/></span>
                     <span>{{shr.country}}<br/></span>
-                    <span>{{shr.email}}<br/></span>
-                    <span>{{shr.phone}}<br/></span>
+                    <span ng-show="shr.isApplicant">{{shr.email}}<br/></span>
+                    <span ng-show="shr.isApplicant">{{shr.phone}}<br/></span>
                 </div>
             </div>
         </div>
 
-        <div class="row" ng-show="$ctrl.structure.getAllBeneficialsCount()>0">
+        <div class="row" ng-show="$ctrl.structure.getAllBeneficialsCount()>0 || $ctrl.applicant.isBeneficial">
             <div class="col">
                 <h5>BENEFICIALS</h5>
+                <div class="span-list" ng-show="$ctrl.applicant.isBeneficial">
+                    <span style='text-decoration:underline'>{{$ctrl.applicant.fullName}}<br/></span>
+                    <span ng-show="ctrl.applicant.dob">{{$ctrl.applicant.dob}}<br/></span>
+                    <span>Tax residency: {{$ctrl.applicant.taxResidency}}<br/></span>
+                    <span ng-show="ctrl.applicant.numbOfShares">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
+                    <span>{{$ctrl.applicant.residentalAddress}}<br/></span>
+                    <span>{{$ctrl.applicant.postCode}}<br/></span>
+                    <span>{{$ctrl.applicant.city}}<br/></span>
+                    <span>{{$ctrl.applicant.country}}<br/></span>
+                    <span>{{$ctrl.applicant.email}}<br/></span>
+                    <span>{{$ctrl.applicant.phone}}</span>
+                </div>
                 <div ng-repeat="ben in $ctrl.structure.getAllBeneficials()" class="span-list">
                     <span style='text-decoration:underline'>{{ben.fullName}}<br/></span>
                     <span ng-show="ben.dob">{{ben.dob}}<br/></span>
@@ -119,8 +155,8 @@
                     <span>{{ben.postCode}}<br/></span>
                     <span>{{ben.city}}<br/></span>
                     <span>{{ben.country}}<br/></span>
-                    <span>{{ben.email}}<br/></span>
-                    <span>{{ben.phone}}<br/></span>
+                    <span ng-show="ben.isApplicant">{{ben.email}}<br/></span>
+                    <span ng-show="ben.isApplicant">{{ben.phone}}<br/></span>
                 </div>
             </div>
         </div>

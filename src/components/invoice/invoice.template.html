@@ -7,24 +7,23 @@
             </div>
         </div>
         <br>
-        {{$ctrl.inv.pdf.link}}
         <div class="row">
             <div class="col">
                 <table class="table">
-                    <tr><td>Handelshaus OÜ</td></tr>
-                    <tr><td>7 Pikk Street, Office 5</td></tr>
-                    <tr><td>10123 Tallinn Estonia</td></tr>
-                    <tr><td>Reg:</td></tr>
-                    <tr><td>Tax number:</td></tr>
-                    <tr><td>VAT:</td></tr>
+                    <tr><td>{{$ctrl.inv.company.name}}</td></tr>
+                    <tr><td>{{$ctrl.inv.company.address}}</td></tr>
+                    <tr><td>{{$ctrl.inv.company.postcode}} {{$ctrl.inv.company.city}} {{$ctrl.inv.company.country}}</td></tr>
+                    <tr><td>Reg: {{$ctrl.inv.company.reg}}</td></tr>
+                    <tr><td>Tax number: {{$ctrl.inv.company.taxNumber}}</td></tr>
+                    <tr><td>VAT: {{$ctrl.inv.company.VAT}}</td></tr>
                 </table>
             </div>
             <div class="col">
                 <table class="table">
-                    <tr><td>Date:</td></tr>
-                    <tr><td>Due date:</td></tr>
-                    <tr><td>Pro forma invoice number:</td></tr>
-                    <tr><td>Reference number:</td></tr>
+                    <tr><td>Date: {{$ctrl.getFormatedDate()}}</td></tr>
+                    <tr><td>Due date: {{$ctrl.getFormatedDueDate()}}</td></tr>
+                    <tr><td>Pro forma invoice number: {{$ctrl.inv.company.invoiceNumber}}</td></tr>
+                    <tr><td>Reference number: {{$ctrl.inv.company.referenceNumber}}</td></tr>
                 </table>
             </div>
         </div>
@@ -34,13 +33,13 @@
             <div class="col-md-6">
                 <table class="table">
                     <thead>
-                        <tr><th>Customer:</th></tr>
+                        <tr><th>Customer</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Name:</td></tr>
-                        <tr><td>Address:</td></tr>
-                        <tr><td>Post Code, City:</td></tr>
-                        <tr><td>Country:</td></tr>
+                        <tr><td>Name: {{$ctrl.inv.customer.name}}</td></tr>
+                        <tr><td>Address: {{$ctrl.inv.customer.address}}</td></tr>
+                        <tr><td>Post Code, City: {{$ctrl.inv.customer.postcode}}, {{$ctrl.inv.customer.city}}</td></tr>
+                        <tr><td>Country: {{$ctrl.inv.customer.country}}</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -61,13 +60,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>LR1j2l</td>
-                      <td>Company Registration In Estonia</td>
-                      <td>1</td>
-                      <td>10</td>
-                      <td>-</td>
-                      <td>10.00</td>
+                    <tr ng-repeat="srv in $ctrl.inv.services.list">
+                      <td>{{srv.service}}</td>
+                      <td>{{srv.description}}</td>
+                      <td>{{srv.qty}}</td>
+                      <td>{{srv.unitPrice}}</td>
+                      <td>{{srv.tax}}</td>
+                      <td>{{srv.total}}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -91,7 +90,7 @@
                     <li>Bank:</li>
                     <li>IBAN:</li>
                     <li>SWIFT:</li>
-                    <li>Please quote pro forma invoice number (>> copy of pro forma invoice number) in the payment reference.</li>
+                    <li>Please quote pro forma invoice number <b>({{$ctrl.inv.company.invoiceNumber}})</b> in the payment reference.</li>
                 </ul>
             </div>
             <div class="col">
@@ -99,15 +98,15 @@
                     <tbody>
                         <tr>
                             <th>Sub total</th>
-                            <td>-</td>
+                            <td>{{$ctrl.inv.services.total}}</td>
                         </tr>
                         <tr>
                             <th>Tax</th>
-                            <td>-</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
                             <th>Total</th>
-                            <td>10.00</td>
+                            <td>{{$ctrl.inv.services.total}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -116,6 +115,11 @@
         <div class="row">
             <div class="col">
                 <p>For any questions related to this pro forma invoice please contact us at <a href="mailto:info@hshaus.com">info@hshaus.com</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="{{$ctrl.inv.pdf.link}}" class="btn btn-secondary btn-lg" role="button">PDF</a>
             </div>
         </div>
     </div>

@@ -34,6 +34,11 @@ body.app-body {
     margin-left: 10px;
 }
 
+.app-body .span-list {
+    margin-top : 5px;
+    margin-bottom : 5px;
+}
+
 .app-body .btn {
     border-radius:0;
 }
@@ -65,4 +70,10 @@ body.app-body {
 img.img-header-inv {
     width:100%;
     margin-bottom:50px;
+}
+.app-body .person {
+    background-color: #f7f7f7;
+    margin:0px 7px;
+    padding:7px;
+    border-radius: 5px;
 }

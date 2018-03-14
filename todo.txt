@@ -10,8 +10,9 @@
 9. validation!!!
 
 
-insert real data in html Inv
-bag in server with empty applicant's dob
-pdf button-link
+
+
+pdf button-link bug
+placeholder for countries
 
 * deffered

@@ -2,6 +2,7 @@ const Person = require('./Person');
 const Structure = require('./Structure');
 const config = require('./config');
 module.exports = ['$location', function($location){
+    this.date="";////test
     this.services = {
         cmpRegInEst:true,
         legAdrServ:false,

@@ -3,7 +3,8 @@ const Person = require('../../Person');
 module.exports =  {
     template : require('./structure.template.html'),
     bindings : {
-        structure: '='
+        structure: '=',
+        applicant: '='
     },
     controller :function StructureController(){
         this.addDirector = ()=>{
@@ -39,5 +40,14 @@ module.exports =  {
                  this.structure.people.splice(index, 1);
             }
         };
+        this.getAllBeneficialsCount = ()=>{
+            return this.applicant.isBeneficial? this.structure.getAllBeneficialsCount()+1:this.structure.getAllBeneficialsCount(); 
+        };
+        this.getAllDirectorsCount = ()=>{
+            return this.applicant.isDirector? this.structure.getAllDirectorsCount()+1:this.structure.getAllDirectorsCount(); 
+        };
+        this.getAllShareholdersCount = ()=>{
+            return this.applicant.isShareholder? this.structure.getAllShareholdersCount()+1:this.structure.getAllShareholdersCount();
+        }
     }
 }
