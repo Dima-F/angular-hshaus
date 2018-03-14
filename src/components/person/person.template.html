@@ -34,13 +34,13 @@
             </div>
             <div class="col" ng-show="$ctrl.who.isInCompany()">
                 <label>D.O.B. *</span></label>
-                <input class="form-control" format="MM-DD-YYYY" ng-model="$ctrl.who.dob" ng-model-options="{ updateOn: 'blur' }" placeholder="Date of birth" moment-picker="$ctrl.who.dob">
+                <input class="form-control" format="DD/MM/YYYY" ng-model="$ctrl.who.dob" ng-model-options="{ updateOn: 'blur' }" placeholder="Date of birth" moment-picker="$ctrl.who.dob">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label>Tax residency *</label>
-                <select ng-model="$ctrl.who.taxResidency" class="form-control"  pvp-country-picker required></select>
+                <select ng-model="$ctrl.who.taxResidency" class="form-control"  pvp-country-picker="name" required></select>
             </div>
             <div class="col">
                 <label>Residential address *</label>
@@ -64,7 +64,7 @@
             </div>
             <div class="col">
                 <label>Country *</label>
-                <select ng-model="$ctrl.who.country" class="form-control" pvp-country-picker required></select>
+                <select ng-model="$ctrl.who.country" class="form-control" pvp-country-picker="name" required></select>
             </div>
         </div>
         <div class="row" ng-show="$ctrl.who.isApplicant">
@@ -79,13 +79,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-

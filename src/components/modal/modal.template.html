@@ -27,9 +27,9 @@
                 <h4>APPLICANT</h4>
                 <div class="span-list">
                     <span style='text-decoration:underline'>{{$ctrl.applicant.fullName}}<br/></span>
-                    <span ng-show="ctrl.applicant.dob">{{$ctrl.applicant.dob}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isInCompany()">{{$ctrl.formatDate($ctrl.applicant.dob)}}<br/></span>
                     <span>Tax residency: {{$ctrl.applicant.taxResidency}}<br/></span>
-                    <span ng-show="ctrl.applicant.numbOfShares">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isShareholder">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
                     <span>{{$ctrl.applicant.residentalAddress}}<br/></span>
                     <span>{{$ctrl.applicant.postCode}}<br/></span>
                     <span>{{$ctrl.applicant.city}}<br/></span>
@@ -76,9 +76,9 @@
                 <h5>DIRECTORS</h5>
                 <div class="span-list" ng-show="$ctrl.applicant.isDirector">
                     <span style='text-decoration:underline'>{{$ctrl.applicant.fullName}}<br/></span>
-                    <span ng-show="ctrl.applicant.dob">{{$ctrl.applicant.dob}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isInCompany()">{{$ctrl.formatDate($ctrl.applicant.dob)}}<br/></span>
                     <span>Tax residency: {{$ctrl.applicant.taxResidency}}<br/></span>
-                    <span ng-show="ctrl.applicant.numbOfShares">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isShareholder">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
                     <span>{{$ctrl.applicant.residentalAddress}}<br/></span>
                     <span>{{$ctrl.applicant.postCode}}<br/></span>
                     <span>{{$ctrl.applicant.city}}<br/></span>
@@ -88,7 +88,7 @@
                 </div>
                 <div ng-repeat="dir in $ctrl.structure.getAllDirectors()" class="span-list">
                     <span style='text-decoration:underline'>{{dir.fullName}}<br/></span>
-                    <span ng-show="dir.dob">{{dir.dob}}<br/></span>
+                    <span ng-show="dir.dob">{{$ctrl.formatDate(dir.dob)}}<br/></span>
                     <span>Tax residency: {{dir.taxResidency}}<br/></span>
                     <span ng-show="dir.numbOfShares">Number or % of shares: {{dir.numbOfShares}}<br/></span>
                     <span>{{dir.residentalAddress}}<br/></span>
@@ -106,9 +106,9 @@
                 <h5>SHAREHOLDERS</h5>
                 <div class="span-list" ng-show="$ctrl.applicant.isShareholder">
                     <span style='text-decoration:underline'>{{$ctrl.applicant.fullName}}<br/></span>
-                    <span ng-show="ctrl.applicant.dob">{{$ctrl.applicant.dob}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isInCompany()">{{$ctrl.formatDate($ctrl.applicant.dob)}}<br/></span>
                     <span>Tax residency: {{$ctrl.applicant.taxResidency}}<br/></span>
-                    <span ng-show="ctrl.applicant.numbOfShares">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isShareholder">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
                     <span>{{$ctrl.applicant.residentalAddress}}<br/></span>
                     <span>{{$ctrl.applicant.postCode}}<br/></span>
                     <span>{{$ctrl.applicant.city}}<br/></span>
@@ -118,7 +118,7 @@
                 </div>
                 <div ng-repeat="shr in $ctrl.structure.getAllShareholders()" class="span-list">
                     <span style='text-decoration:underline'>{{shr.fullName}}<br/></span>
-                    <span ng-show="shr.dob">{{shr.dob}}<br/></span>
+                    <span ng-show="shr.dob">{{$ctrl.formatDate(shr.dob)}}<br/></span>
                     <span>Tax residency: {{shr.taxResidency}}<br/></span>
                     <span ng-show="shr.numbOfShares">Number or % of shares: {{shr.numbOfShares}}<br/></span>
                     <span>{{shr.residentalAddress}}<br/></span>
@@ -133,12 +133,12 @@
 
         <div class="row" ng-show="$ctrl.structure.getAllBeneficialsCount()>0 || $ctrl.applicant.isBeneficial">
             <div class="col">
-                <h5>BENEFICIALS</h5>
+                <h5>BENEFICIAL OWNERS</h5>
                 <div class="span-list" ng-show="$ctrl.applicant.isBeneficial">
-                    <span style='text-decoration:underline'>{{$ctrl.applicant.fullName}}<br/></span>
-                    <span ng-show="ctrl.applicant.dob">{{$ctrl.applicant.dob}}<br/></span>
+                    <span style='text-decoration:underline'>{{$ctrl.formatDate($ctrl.applicant.dob)}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isInCompany()">{{$ctrl.applicant.dob}}<br/></span>
                     <span>Tax residency: {{$ctrl.applicant.taxResidency}}<br/></span>
-                    <span ng-show="ctrl.applicant.numbOfShares">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
+                    <span ng-show="$ctrl.applicant.isShareholder">Number or % of shares: {{$ctrl.applicant.numbOfShares}}<br/></span>
                     <span>{{$ctrl.applicant.residentalAddress}}<br/></span>
                     <span>{{$ctrl.applicant.postCode}}<br/></span>
                     <span>{{$ctrl.applicant.city}}<br/></span>
@@ -148,7 +148,7 @@
                 </div>
                 <div ng-repeat="ben in $ctrl.structure.getAllBeneficials()" class="span-list">
                     <span style='text-decoration:underline'>{{ben.fullName}}<br/></span>
-                    <span ng-show="ben.dob">{{ben.dob}}<br/></span>
+                    <span ng-show="ben.dob">{{$ctrl.formatDate(ben.dob)}}<br/></span>
                     <span>Tax residency: {{ben.taxResidency}}<br/></span>
                     <span ng-show="ben.numbOfShares">Number or % of shares: {{ben.numbOfShares}}<br/></span>
                     <span>{{ben.residentalAddress}}<br/></span>

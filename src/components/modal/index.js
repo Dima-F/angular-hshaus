@@ -22,7 +22,7 @@ module.exports =  {
                (res)=>{
                  this.response="ok";
                  Object.assign(this.inv, res.data);
-               }, 
+               },
                (err)=>{
                  this.response="error";
                }
@@ -31,6 +31,10 @@ module.exports =  {
         this.close = ()=>{
             this.response="";
             $location.path('/');
-        }
+        };
+        this.formatDate = (stringDate)=>{
+            if(!stringDate) return "";
+            return moment(stringDate).format('DD/MM/YYYY');
+        };
     }]
 }
