@@ -22,7 +22,6 @@ module.exports =  {
                (res)=>{
                  this.response="ok";
                  Object.assign(this.inv, res.data);
-                 console.log(JSON.stringify(this.inv));
                }, 
                (err)=>{
                  this.response="error";

@@ -30,6 +30,24 @@
  margin-bottom: -5px;
  border-radius: 3px;
 }
+/*My additional classes*/
+.person .checkmark-c {
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 22px;
+ width: 22px;
+ background-color: #ccc;
+ margin-bottom: -5px;
+ border-radius: 3px;
+}
+.person .container-c:hover input ~ .checkmark-c {
+ background-color: #b4b4b4;
+}
+.person .container-c input:checked ~ .checkmark-c {
+ background-color: #9b7b4d;
+}
+
 
 /* On mouse-over, add a grey background color */
 .container-c:hover input ~ .checkmark-c {

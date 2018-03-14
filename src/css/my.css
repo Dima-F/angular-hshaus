@@ -73,7 +73,10 @@ img.img-header-inv {
 }
 .app-body .person {
     background-color: #f7f7f7;
-    margin:0px 7px;
+    margin:5px 7px !important;
     padding:7px;
     border-radius: 5px;
+}
+.app-body .structure p {
+    color: #45351e;
 }
