@@ -80,4 +80,9 @@ img.img-header-inv {
 .app-body .structure p {
     color: #45351e;
     text-decoration: underline;
+    font-size:14px !important;
+}
+.app-body .person label.hint-muted {
+    color: #b0b0b0;
+    font-size:14px;
 }

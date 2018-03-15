@@ -1,8 +1,7 @@
 const angular = require('angular');
-require('angular-country-picker');
 require('angular-route');
 require('angular-moment-picker');
-const hshaus = angular.module('hshaus',['ngRoute','puigcerber.countryPicker','moment-picker']);
+const hshaus = angular.module('hshaus',['ngRoute','moment-picker']);
 hshaus.config(['$routeProvider','$locationProvider',
     function config($routeProvider,$locationProvider) {
       $locationProvider.hashPrefix('!');

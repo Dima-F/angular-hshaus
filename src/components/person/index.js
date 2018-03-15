@@ -4,6 +4,6 @@ module.exports =  {
         who: '='
     },
     controller: function PersonController(){
-
+        this.countryList = require('../../country-list');
     }
 }

@@ -1,9 +1,3 @@
 
-validation!!! (disable validation for hiden inputs)
 pdf button-link bug
-placeholder for countries
-
-* deffered
-
-
-5. В разделе директора - Нет сопутствующего текста см. файл (текст может быть мелким или полупрозрачным шрифтом как пояснение)
+IE visualization bug

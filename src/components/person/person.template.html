@@ -2,7 +2,7 @@
     <div class="person col">
         <div class="row">
             <div class="col">
-                <label class="text-muted">Add this person as a </label>
+                <label class="hint-muted">Add this person as a </label>
             </div>
             <div class="col">
                 <label class="container-c">Director
@@ -23,7 +23,7 @@
                 </label>
             </div>
             <div class="col-md-4" ng-hide="$ctrl.who.isApplicant" style="text-align:left">
-                <label class="text-muted"> if applicable and you have not already done so. </label>
+                <label class="hint-muted"> if applicable and you have not already done so. </label>
             </div>
         </div>
 
@@ -33,14 +33,16 @@
                 <input ng-model="$ctrl.who.fullName" name="fullName" type="text" class="form-control" placeholder="Name Surname" required>
             </div>
             <div class="col" ng-show="$ctrl.who.isInCompany()">
-                <label>D.O.B.</span></label>
-                <input class="form-control" format="DD/MM/YYYY" ng-model="$ctrl.who.dob" ng-model-options="{ updateOn: 'blur' }" placeholder="Date of birth" moment-picker="$ctrl.who.dob">
+                <label>D.O.B. *</span></label>
+                <input class="form-control" format="DD/MM/YYYY" ng-model="$ctrl.who.dob" ng-model-options="{ updateOn: 'blur' }" placeholder="Date of birth" moment-picker="$ctrl.who.dob" ng-required="$ctrl.who.isInCompany()">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label>Tax residency *</label>
-                <select ng-model="$ctrl.who.taxResidency" class="form-control"  pvp-country-picker="name" required>
+                <select ng-model="$ctrl.who.taxResidency" class="form-control" required>
+                    <option value="" disabled>Please, select your country</option>
+                    <option value="{{cntr.name}}" ng-repeat="cntr in $ctrl.countryList">{{cntr.name}}</option>
                 </select>
             </div>
             <div class="col" ng-show="$ctrl.who.isApplicant">
@@ -54,8 +56,8 @@
         </div>
         <div class="row">
             <div class="col" ng-show="$ctrl.who.isShareholder">
-                <label>Number or % of shares</label>
-                <input ng-model="$ctrl.who.numbOfShares" type="text" class="form-control" placeholder="Number or % of shares">
+                <label>Number or % of shares *</label>
+                <input ng-model="$ctrl.who.numbOfShares" type="text" class="form-control" placeholder="Number or % of shares" ng-required="$ctrl.who.isShareholder">
             </div>
             <div class="col">
                 <label>Postcode *</label>
@@ -69,7 +71,10 @@
             </div>
             <div class="col">
                 <label>Country *</label>
-                <select ng-model="$ctrl.who.country" class="form-control" pvp-country-picker="name" required></select>
+                <select ng-model="$ctrl.who.country" class="form-control" required>
+                    <option value="" disabled>Please, select your country</option>
+                    <option value="{{cntr.name}}" ng-repeat="cntr in $ctrl.countryList">{{cntr.name}}</option>
+                </select>
             </div>
         </div>
         <div class="row" ng-show="$ctrl.who.isApplicant">
