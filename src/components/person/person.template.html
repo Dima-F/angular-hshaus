@@ -2,7 +2,7 @@
     <div class="person col">
         <div class="row">
             <div class="col">
-                <label>Add this person as a</label>
+                <label class="text-muted">Add this person as a </label>
             </div>
             <div class="col">
                 <label class="container-c">Director
@@ -22,8 +22,8 @@
                   <span class="checkmark-c"></span>
                 </label>
             </div>
-            <div class="col-md-4" ng-hide="$ctrl.who.isApplicant">
-                <label> if applicable and you have not already done so. </label>
+            <div class="col-md-4" ng-hide="$ctrl.who.isApplicant" style="text-align:left">
+                <label class="text-muted"> if applicable and you have not already done so. </label>
             </div>
         </div>
 
@@ -33,18 +33,23 @@
                 <input ng-model="$ctrl.who.fullName" name="fullName" type="text" class="form-control" placeholder="Name Surname" required>
             </div>
             <div class="col" ng-show="$ctrl.who.isInCompany()">
-                <label>D.O.B. *</span></label>
+                <label>D.O.B.</span></label>
                 <input class="form-control" format="DD/MM/YYYY" ng-model="$ctrl.who.dob" ng-model-options="{ updateOn: 'blur' }" placeholder="Date of birth" moment-picker="$ctrl.who.dob">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label>Tax residency *</label>
-                <select ng-model="$ctrl.who.taxResidency" class="form-control"  pvp-country-picker="name" required></select>
+                <select ng-model="$ctrl.who.taxResidency" class="form-control"  pvp-country-picker="name" required>
+                </select>
             </div>
-            <div class="col">
+            <div class="col" ng-show="$ctrl.who.isApplicant">
                 <label>Residential address *</label>
-                <input ng-model="$ctrl.who.residentalAddress" type="text" class="form-control" placeholder="1234 Main St" required>
+                <input ng-model="$ctrl.who.residentalAddress" type="text" class="form-control" placeholder="Residential address" required>
+            </div>
+            <div class="col" ng-hide="$ctrl.who.isApplicant">
+                <label>Address *</label>
+                <input ng-model="$ctrl.who.residentalAddress" type="text" class="form-control" placeholder="Address" required>
             </div>
         </div>
         <div class="row">
@@ -53,8 +58,8 @@
                 <input ng-model="$ctrl.who.numbOfShares" type="text" class="form-control" placeholder="Number or % of shares">
             </div>
             <div class="col">
-                <label>Postcode</label>
-                <input ng-model="$ctrl.who.postCode" type="text" class="form-control" placeholder="Postcode">
+                <label>Postcode *</label>
+                <input ng-model="$ctrl.who.postCode" type="text" class="form-control" placeholder="Postcode" required>
             </div>
         </div>
         <div class="row">

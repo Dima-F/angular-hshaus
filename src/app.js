@@ -9,15 +9,15 @@ hshaus.config(['$routeProvider','$locationProvider',
       $routeProvider.
         when('/', {
           template: `<div class="row">
-                      <form class="needs-validation" name="mainForm" novalidate>
+                      <form ng-class="{attempted:main.reviewAttempt}" name="mainForm" novalidate>
                             <services services="main.services"></services>
                             <h4>APPLICANT</h4>
                             <person who="main.applicant"></person>
                             <company company="main.company"></company>
                             <structure structure="main.structure" applicant="main.applicant"></structure>
                             <question question="main.question"></question>
-                            <p class="text-danger" ng-show="mainForm.$invalid">Please enter all required fields (with *) and check email and date fields format.</p>
-                            <button class="btn btn-secondary btn-lg" ng-click="main.showReview()" ng-disabled="mainForm.$invalid">Review</button>
+                            <p class="text-danger" ng-show="mainForm.$invalid && main.reviewAttempt">Please enter all required fields (with *) and check email and date fields format.</p>
+                            <button class="btn btn-secondary btn-lg" ng-click="main.reviewAttempt=true; mainForm.$valid && main.showReview();">Review</button>
                       </form>
                   </div>`
         }).

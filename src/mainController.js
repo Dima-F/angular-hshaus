@@ -1,8 +1,7 @@
 const Person = require('./Person');
 const Structure = require('./Structure');
 const config = require('./config');
-module.exports = ['$location', function($location){
-    this.date="";////test
+module.exports = ['$location','$scope', function($location, $scope){
     this.services = {
         cmpRegInEst:true,
         legAdrServ:false,
@@ -24,7 +23,7 @@ module.exports = ['$location', function($location){
         turnover:""
     };
     this.structure = new Structure();
-    /*
+
     //now lets add one director, beneficial and shareholder to structure
     let firstDirector = new Person();
     firstDirector.isDirector=true;
@@ -35,11 +34,15 @@ module.exports = ['$location', function($location){
     let firstShareholder = new Person();
     firstShareholder.isShareholder=true;
     this.structure.people.push(firstShareholder);
-    */
+
     this.question = {
         politicallyExposed:"No"
     };
     this.inv = {};
+    
+    
+    this.reviewAttempt = false;
+
     this.showReview = ()=>{
         $location.path('/review');
     };
