@@ -24,7 +24,7 @@ module.exports = ['$location','$scope', function($location, $scope){
         turnover:""
     };
     this.structure = new Structure();
-    /*
+    
     //now lets add one director, beneficial and shareholder to structure
     let firstDirector = new Person();
     firstDirector.isDirector=true;
@@ -35,7 +35,7 @@ module.exports = ['$location','$scope', function($location, $scope){
     let firstShareholder = new Person();
     firstShareholder.isShareholder=true;
     this.structure.people.push(firstShareholder);
-    */
+    
     this.question = {
         politicallyExposed:"No"
     };
